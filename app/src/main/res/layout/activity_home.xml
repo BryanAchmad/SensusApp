@@ -8,11 +8,10 @@
     android:background="#f5f5f5"
     tools:context=".HomeActivity">
 
-    
     <View
         android:id="@+id/viewHome"
         android:layout_width="0dp"
-        android:layout_height="195dp"
+        android:layout_height="200dp"
         android:paddingHorizontal="20dp"
         android:background="@color/colorPrimary"
         app:layout_constraintTop_toTopOf="parent"
@@ -25,11 +24,11 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/viewHome"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="48dp"
-        android:text="Halo, Selamat Datang!"
+        android:text="@string/welcome"
         android:textStyle="bold"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:textColor="#ffffff"
         />
 
@@ -39,11 +38,11 @@
         app:layout_constraintTop_toBottomOf="@id/tv_slmt"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="8dp"
-        android:layout_marginLeft="20dp"
-        android:text="Aplikasi Sensus Penduduk"
-        android:textSize="10dp"
+        android:layout_marginStart="20dp"
+        android:text="@string/subtitle_welcome"
+        android:textSize="10sp"
         android:textColor="#ffffff"
-        />
+        tools:ignore="SmallSp" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardview_home"
@@ -61,7 +60,6 @@
             android:id="@+id/constraint_home"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             >
             
             <androidx.appcompat.widget.AppCompatImageView
@@ -71,7 +69,7 @@
                 app:layout_constraintStart_toStartOf="@id/constraint_home"
                 app:layout_constraintTop_toTopOf="@id/constraint_home"
                 android:layout_marginTop="24dp"
-                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
                 android:src="@drawable/ic_folder_shared_black_24dp"
                 />
             <androidx.appcompat.widget.AppCompatTextView
@@ -82,9 +80,9 @@
                 app:layout_constraintStart_toEndOf="@+id/icon_kk"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="20dp"
-                android:text="jumlah"
-                android:textSize="8dp"
-                />
+                android:text="@string/title_card_jumlah"
+                android:textSize="8sp"
+                tools:ignore="SmallSp" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_kartukel"
@@ -94,10 +92,9 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_jumlah"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="2dp"
-                android:text="Kartu Keluarga"
-                android:textSize="14dp"
+                android:text="@string/title_kartu_keluarga"
+                android:textSize="14sp"
                 android:textStyle="bold"
-
                 />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -107,18 +104,17 @@
                 app:layout_constraintTop_toTopOf="@id/constraint_home"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
-                android:text="2.567"
+                android:text="@string/total_kartuKel"
                 android:textStyle="bold"
-                android:textSize="24dp"
-
+                android:textSize="24sp"
                 />
 
             <View
                 android:id="@+id/divider"
                 android:layout_width="0dp"
-                android:layout_height="0.5dp"
+                android:layout_height="1dp"
                 android:orientation="vertical"
-                android:background="@drawable/custom_button"
+                android:background="#D4DFE3"
                 app:layout_constraintStart_toStartOf="@id/constraint_home"
                 app:layout_constraintEnd_toEndOf="@id/constraint_home"
                 app:layout_constraintTop_toBottomOf="@id/tv_kartukel"
@@ -162,7 +158,7 @@
                         app:layout_constraintStart_toStartOf="@id/constraint_jenis"
                         app:layout_constraintTop_toTopOf="@id/constraint_jenis"
                         android:layout_marginTop="16dp"
-                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
                         android:src="@drawable/ic_icon_man_32px"
                         />
 
@@ -174,9 +170,9 @@
                         app:layout_constraintTop_toTopOf="@id/constraint_jenis"
                         android:layout_marginTop="16dp"
                         android:layout_marginStart="16dp"
-                        android:text="Laki-laki"
-                        android:textSize="8dp"
-                        />
+                        android:text="@string/laki_laki"
+                        android:textSize="8sp"
+                        tools:ignore="SmallSp" />
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="0dp"
@@ -185,13 +181,11 @@
                         app:layout_constraintTop_toBottomOf="@id/tv_laki"
                         android:layout_marginTop="2dp"
                         android:layout_marginStart="16dp"
-                        android:text="1.567"
+                        android:text="@string/jumlah_laki"
                         android:textStyle="bold"
-                        android:textSize="14dp"
+                        android:textSize="14sp"
                         />
-
                 </androidx.constraintlayout.widget.ConstraintLayout>
-
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -222,7 +216,7 @@
                         app:layout_constraintStart_toStartOf="@id/constraint_jenisPr"
                         app:layout_constraintTop_toTopOf="@id/constraint_jenisPr"
                         android:layout_marginTop="16dp"
-                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
                         android:src="@drawable/ic_icon_girl_32px"
                         />
 
@@ -234,9 +228,9 @@
                         app:layout_constraintTop_toTopOf="@id/constraint_jenisPr"
                         android:layout_marginTop="16dp"
                         android:layout_marginStart="16dp"
-                        android:text="Perempuan"
-                        android:textSize="8dp"
-                        />
+                        android:text="@string/perempuan"
+                        android:textSize="8sp"
+                        tools:ignore="SmallSp" />
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="0dp"
@@ -245,35 +239,16 @@
                         app:layout_constraintTop_toBottomOf="@id/tv_perempuan"
                         android:layout_marginTop="2dp"
                         android:layout_marginStart="16dp"
-                        android:text="1.567"
+                        android:text="@string/total_perempuan"
                         android:textStyle="bold"
-                        android:textSize="14dp"
+                        android:textSize="14sp"
                         />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
-
             </androidx.cardview.widget.CardView>
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
     </androidx.cardview.widget.CardView>
-    
-<!--    <androidx.appcompat.widget.AppCompatButton-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="68dp"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        android:layout_marginTop="340dp"-->
-<!--        android:layout_marginHorizontal="20dp"-->
-<!--        android:text="Cari Data"-->
-<!--        android:drawableLeft="@drawable/ic_search_black_24dp"-->
-<!--        android:drawablePadding="20dp"-->
-<!--        >-->
 
-<!--    </androidx.appcompat.widget.AppCompatButton>-->
     
     <androidx.cardview.widget.CardView
         android:id="@+id/button_search"
@@ -287,45 +262,49 @@
         android:background="@drawable/custom_button"
         android:clickable="true"
         android:foreground="?attr/selectableItemBackground"
-        >
+        app:cardBackgroundColor="#20639B"
+        android:focusable="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintcari"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <androidx.appcompat.widget.AppCompatTextView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/icon_search"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="22dp"
-                android:layout_marginTop="22dp"
-                android:drawableLeft="@drawable/ic_search_black_24dp"
                 app:layout_constraintStart_toStartOf="@id/constraintcari"
-                app:layout_constraintTop_toTopOf="@id/constraintcari" />
+                app:layout_constraintTop_toTopOf="@id/constraintcari"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="22dp"
+                android:src="@drawable/ic_bx_bx_search_alt_2"
+                />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_temukandata"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toEndOf="@id/icon_search"
                 app:layout_constraintTop_toTopOf="@id/constraintcari"
                 android:layout_marginLeft="16dp"
-                android:layout_marginTop="20dp"
-                android:text="Temukan Data"
+                android:layout_marginTop="16dp"
+                android:text="@string/title_temukan_data"
                 android:textStyle="bold"
-                android:textSize="14dp"
+                android:textSize="14sp"
+                android:textColor="#ffffff"
                 />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toEndOf="@id/icon_search"
-                app:layout_constraintTop_toTopOf="@id/constraintcari"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="40dp"
-                android:text="Cari Data berdasarkan NO.KK"
-                android:textSize="10dp"
-
+                app:layout_constraintTop_toBottomOf="@id/tv_temukandata"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:text="@string/subtitle_pencarian"
+                android:textSize="10sp"
+                android:textColor="#ffffff"
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -338,8 +317,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/button_search"
-        android:text="Data Terbaru"
-        android:textSize="12dp"
+        android:text="@string/title_data_baru"
+        android:textSize="12sp"
         android:textStyle="bold"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="20dp"
@@ -352,12 +331,9 @@
         app:layout_constraintTop_toBottomOf="@id/tv_dataterbaru"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginHorizontal="20dp"
+        android:layout_marginHorizontal="19dp"
         android:layout_marginTop="8dp"
-
         />
-
-
 
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
@@ -365,7 +341,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:text="+ Tambah Data"
+        android:text="@string/button_tambah_data"
         android:textStyle="bold"
         android:textColor="#ffffff"
         android:background="@drawable/custom_button"

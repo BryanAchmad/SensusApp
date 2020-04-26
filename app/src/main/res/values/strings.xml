@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">SensusApp</string>
+    <string name="welcome">Halo, Selamat Datang!</string>
+    <string name="subtitle_welcome">Aplikasi Sensus Penduduk</string>
+    <string name="title_card_jumlah">jumlah</string>
+    <string name="title_kartu_keluarga">Kartu Keluarga</string>
+    <string name="total_kartuKel">2.567</string>
+    <string name="laki_laki">Laki-laki</string>
+    <string name="jumlah_laki">1.567</string>
+    <string name="perempuan">Perempuan</string>
+    <string name="total_perempuan">1.567</string>
+    <string name="subtitle_pencarian">Cari Data berdasarkan NO.KK</string>
+    <string name="title_data_baru">Data Terbaru</string>
+    <string name="button_tambah_data">+ Tambah Data</string>
+    <string name="title_temukan_data">Temukan Data</string>
 </resources>
