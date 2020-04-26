@@ -1,0 +1,2 @@
+rootProject.name='SensusApp'
+include ':app'
