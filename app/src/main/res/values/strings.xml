@@ -13,4 +13,8 @@
     <string name="title_data_baru">Data Terbaru</string>
     <string name="button_tambah_data">+ Tambah Data</string>
     <string name="title_temukan_data">Temukan Data</string>
+    <string name="detail_kartu_keluarga">Detail Kartu Keluarga</string>
+    <string name="detail_no_kartu_keluarga">No. Kartu Keluarga</string>
+    <string name="nokk">180293810823091823473</string>
+    <string name="txt_cari_data">Cari Data</string>
 </resources>

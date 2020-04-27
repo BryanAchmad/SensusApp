@@ -1,11 +1,14 @@
 package com.example.sensusapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import java.util.ArrayList;
 
@@ -14,6 +17,7 @@ public class HomeActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private KartuKeluargaAdapter adapter;
     private ArrayList<KartuKeluarga> list;
+    private CardView cardViewSearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,17 @@ public class HomeActivity extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(HomeActivity.this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
+
+        cardViewSearch = (CardView) findViewById(R.id.button_search);
+
+        cardViewSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, DetailActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     void addData(){
