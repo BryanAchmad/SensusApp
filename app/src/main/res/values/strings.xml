@@ -17,4 +17,9 @@
     <string name="detail_no_kartu_keluarga">No. Kartu Keluarga</string>
     <string name="nokk">180293810823091823473</string>
     <string name="txt_cari_data">Cari Data</string>
+    <string name="email_hint">johndoe@mail.com</string>
+    <string name="txt_email">Email</string>
+    <string name="txt_password">Password</string>
+    <string name="password_hint">password</string>
+    <string name="txt_btn_login">LOGIN</string>
 </resources>

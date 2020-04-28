@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/colorPrimaryLight"
     android:paddingHorizontal="16dp"
     tools:context=".MainActivity">
 
@@ -15,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="340dp"
-        android:text="Email"
+        android:text="@string/txt_email"
         android:textColor="#fff"/>
 
     <androidx.appcompat.widget.AppCompatEditText
@@ -23,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="52dp"
         android:layout_marginTop="8dp"
-        android:hint="johndoe@mail.com"
+        android:hint="@string/email_hint"
         android:background="@drawable/custom_edittext"
         android:textSize="12sp"
         android:inputType="textEmailAddress"
@@ -33,10 +32,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Password"
+        android:text="@string/txt_password"
         android:textColor="#fff"
         />
-
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/et_password"
@@ -45,8 +43,9 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/custom_edittext"
         android:inputType="textPassword"
-        android:hint="password"
+        android:hint="@string/password_hint"
         android:textSize="12sp"
+        android:textStyle="bold"
         />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -55,8 +54,8 @@
         android:layout_height="52dp"
         android:layout_marginTop="32dp"
         android:background="@color/colorPrimary"
-        android:text="LOGIN"
-        android:textColor="#ffffff"
+        android:text="@string/txt_btn_login"
+        android:textColor="@color/white"
         android:textStyle="bold" />
 
 </LinearLayout>

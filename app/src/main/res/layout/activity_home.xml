@@ -13,98 +13,122 @@
         android:layout_width="0dp"
         android:layout_height="200dp"
         android:paddingHorizontal="20dp"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorPrimaryLight"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_slmt"
-        android:layout_width="0dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_judul_home"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="48dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="@string/welcome"
-        android:textColor="#ffffff"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/viewHome" />
+        app:layout_constraintStart_toStartOf="@id/viewHome"
+        app:layout_constraintEnd_toEndOf="@id/viewHome"
+        app:layout_constraintTop_toTopOf="@id/viewHome"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="40dp"
+        >
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tv_slmt"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="20dp"
-        android:text="@string/subtitle_welcome"
-        android:textSize="10sp"
-        android:textColor="#ffffff"
-        tools:ignore="SmallSp" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_slmt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/welcome"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/constraint_judul_home"
+            app:layout_constraintTop_toTopOf="@id/constraint_judul_home" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_slmt"
+            app:layout_constraintStart_toStartOf="@id/constraint_judul_home"
+            android:layout_marginTop="4dp"
+            android:text="@string/subtitle_welcome"
+            android:textSize="10sp"
+            android:textColor="@color/white"
+            tools:ignore="SmallSp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardview_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constraint_judul_home"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="123dp"
-        android:layout_marginHorizontal="20dp"
+        android:layout_margin="20dp"
         android:background="@drawable/background_home"
         android:elevation="4dp"
         >
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraint_home"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="20dp"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
             >
-            
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/icon_kk"
-                android:layout_width="wrap_content"
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_card_jml_kk"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/constraint_home"
                 app:layout_constraintStart_toStartOf="@id/constraint_home"
-                app:layout_constraintTop_toTopOf="@id/constraint_home"
-                android:layout_marginTop="4dp"
-                android:src="@drawable/ic_folder_shared_black_24dp"
-                />
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_jumlah"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="@id/constraint_home"
-                app:layout_constraintStart_toEndOf="@+id/icon_kk"
-                android:layout_marginStart="16dp"
-                android:text="@string/title_card_jumlah"
-                android:textSize="8sp"
-                tools:ignore="SmallSp" />
+                >
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_kartukel"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toEndOf="@id/icon_kk"
-                app:layout_constraintTop_toBottomOf="@id/tv_jumlah"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="2dp"
-                android:text="@string/title_kartu_keluarga"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/icon_kk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@id/constraint_card_jml_kk"
+                    app:layout_constraintTop_toTopOf="@id/constraint_card_jml_kk"
+                    app:layout_constraintBottom_toBottomOf="@id/constraint_card_jml_kk"
+                    android:src="@drawable/ic_folder_shared_black_24dp"
+                    />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="@id/constraint_home"
-                app:layout_constraintTop_toTopOf="@id/constraint_home"
-                android:text="@string/total_kartuKel"
-                android:textStyle="bold"
-                android:textSize="24sp"
-                />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_jumlah"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@id/constraint_card_jml_kk"
+                    app:layout_constraintStart_toEndOf="@+id/icon_kk"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/title_card_jumlah"
+                    android:textSize="8sp"
+                    tools:ignore="SmallSp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_kartukel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@id/icon_kk"
+                    app:layout_constraintTop_toBottomOf="@id/tv_jumlah"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/title_kartu_keluarga"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="@id/constraint_card_jml_kk"
+                    app:layout_constraintTop_toTopOf="@id/constraint_card_jml_kk"
+                    app:layout_constraintBottom_toBottomOf="@id/constraint_card_jml_kk"
+                    android:text="@string/total_kartuKel"
+                    android:textStyle="bold"
+                    android:textSize="24sp"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
                 android:id="@+id/divider"
@@ -114,148 +138,177 @@
                 android:background="#D4DFE3"
                 app:layout_constraintStart_toStartOf="@id/constraint_home"
                 app:layout_constraintEnd_toEndOf="@id/constraint_home"
-                app:layout_constraintTop_toBottomOf="@id/tv_kartukel"
-                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/constraint_card_jml_kk"
+                android:layout_marginVertical="20dp"
+
                 />
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guidelineHome"
-                android:layout_width="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_jml_jns_kel"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.5" />
-
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="64dp"
                 app:layout_constraintTop_toBottomOf="@id/divider"
                 app:layout_constraintStart_toStartOf="@id/constraint_home"
-                app:layout_constraintEnd_toEndOf="@id/guidelineHome"
-                android:layout_marginEnd="10dp"
-                android:layout_marginTop="20dp"
-                app:cardBackgroundColor="#D4DFE3"
-                app:cardElevation="0dp"
-                >
+                app:layout_constraintEnd_toEndOf="@id/constraint_home"
+                app:layout_constraintBottom_toBottomOf="@id/constraint_home"
+                android:layout_marginTop="20dp">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/constraint_jenis"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#ffffff"
-                    android:layout_margin="1dp"
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5"
+                    app:layout_constraintTop_toBottomOf="@id/constraint_jml_jns_kel" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@id/constraint_jml_jns_kel"
+                    app:layout_constraintStart_toStartOf="@id/constraint_jml_jns_kel"
+                    app:layout_constraintEnd_toEndOf="@id/guidelineHome"
+                    android:layout_marginEnd="10dp"
+                    app:cardBackgroundColor="#D4DFE3"
+                    app:cardElevation="0dp"
                     >
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/icon_laki"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintStart_toStartOf="@id/constraint_jenis"
-                        app:layout_constraintTop_toTopOf="@id/constraint_jenis"
-                        android:layout_margin="16dp"
-                        android:src="@drawable/ic_icon_man_32px"
-                        />
-
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/constraint_txt_laki"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintStart_toEndOf="@id/icon_laki"
-                        app:layout_constraintTop_toTopOf="@id/constraint_jenis"
-                        app:layout_constraintBottom_toBottomOf="@id/constraint_jenis"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginBottom="12dp"
+                        android:id="@+id/constraint_jenis"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#ffffff"
+                        android:layout_margin="1dp"
+                        android:padding="12dp"
                         >
 
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/tv_laki"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            app:layout_constraintStart_toStartOf="@id/constraint_txt_laki"
-                            app:layout_constraintTop_toTopOf="@id/constraint_txt_laki"
-                            android:text="@string/laki_laki"
-                            android:textSize="10sp"
-                            tools:ignore="SmallSp" />
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraint_laki"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:layout_constraintStart_toStartOf="@id/constraint_jenis"
+                            app:layout_constraintTop_toTopOf="@id/constraint_jenis"
+                            app:layout_constraintBottom_toBottomOf="@id/constraint_jenis">
 
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            app:layout_constraintStart_toStartOf="@+id/constraint_txt_laki"
-                            app:layout_constraintTop_toBottomOf="@id/tv_laki"
-                            android:layout_marginTop="2dp"
-                            android:text="@string/jumlah_laki"
-                            android:textStyle="bold"
-                            android:textSize="16sp"
-                            />
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/icon_laki"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintStart_toStartOf="@id/constraint_laki"
+                                app:layout_constraintTop_toTopOf="@id/constraint_laki"
+                                app:layout_constraintBottom_toBottomOf="@id/constraint_laki"
+                                android:src="@drawable/ic_icon_man_32px"
+                                />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/constraint_txt_laki"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintStart_toEndOf="@id/icon_laki"
+                                app:layout_constraintTop_toTopOf="@id/constraint_laki"
+                                app:layout_constraintBottom_toBottomOf="@id/constraint_laki"
+                                android:layout_marginStart="16dp"
+                                >
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tv_laki"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    app:layout_constraintStart_toStartOf="@id/constraint_txt_laki"
+                                    app:layout_constraintTop_toTopOf="@id/constraint_txt_laki"
+                                    android:text="@string/laki_laki"
+                                    android:textSize="10sp"
+                                    tools:ignore="SmallSp" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    app:layout_constraintStart_toStartOf="@+id/constraint_txt_laki"
+                                    app:layout_constraintTop_toBottomOf="@id/tv_laki"
+                                    android:layout_marginTop="2dp"
+                                    android:text="@string/jumlah_laki"
+                                    android:textStyle="bold"
+                                    android:textSize="16sp"
+                                    />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
                     </androidx.constraintlayout.widget.ConstraintLayout>
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="64dp"
-                app:layout_constraintTop_toBottomOf="@id/divider"
-                app:layout_constraintStart_toStartOf="@id/guidelineHome"
-                app:layout_constraintEnd_toEndOf="@id/constraint_home"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp"
-                app:cardBackgroundColor="#D4DFE3"
-                app:cardElevation="0dp"
-                >
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/constraint_jenisPr"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#ffffff"
-                    android:layout_margin="1dp"
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@id/constraint_jml_jns_kel"
+                    app:layout_constraintStart_toEndOf="@id/guidelineHome"
+                    app:layout_constraintEnd_toEndOf="@id/constraint_jml_jns_kel"
+                    android:layout_marginStart="10dp"
+                    app:cardBackgroundColor="#D4DFE3"
+                    app:cardElevation="0dp"
                     >
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/icon_perempuan"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintStart_toStartOf="@id/constraint_jenisPr"
-                        app:layout_constraintTop_toTopOf="@id/constraint_jenisPr"
-                        android:layout_margin="16dp"
-                        android:src="@drawable/ic_icon_girl_32px"
-                        />
-
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/constraint_txt_pr"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintStart_toEndOf="@id/icon_perempuan"
-                        app:layout_constraintTop_toTopOf="@id/constraint_jenisPr"
-                        app:layout_constraintBottom_toBottomOf="@id/constraint_jenisPr"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginBottom="12dp">
+                        android:id="@+id/constraint_jenisPr"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#ffffff"
+                        android:layout_margin="1dp"
+                        android:padding="12dp"
+                        >
 
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/tv_perempuan"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            app:layout_constraintStart_toStartOf="@id/constraint_txt_pr"
-                            app:layout_constraintTop_toTopOf="@id/constraint_txt_pr"
-                            android:text="@string/perempuan"
-                            android:textSize="10sp"
-                            tools:ignore="SmallSp" />
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraint_pr"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:layout_constraintStart_toStartOf="@id/constraint_jenisPr"
+                            app:layout_constraintTop_toTopOf="@id/constraint_jenisPr"
+                            app:layout_constraintBottom_toBottomOf="@id/constraint_jenisPr">
 
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            app:layout_constraintStart_toStartOf="@id/constraint_txt_pr"
-                            app:layout_constraintTop_toBottomOf="@id/tv_perempuan"
-                            android:layout_marginTop="2dp"
-                            android:text="@string/total_perempuan"
-                            android:textStyle="bold"
-                            android:textSize="16sp"
-                            />
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/icon_perempuan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintStart_toStartOf="@id/constraint_pr"
+                                app:layout_constraintTop_toTopOf="@id/constraint_pr"
+                                app:layout_constraintBottom_toBottomOf="@id/constraint_pr"
+                                android:src="@drawable/ic_icon_girl_32px"
+                                />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/constraint_txt_pr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintStart_toEndOf="@id/icon_perempuan"
+                                app:layout_constraintTop_toTopOf="@id/constraint_pr"
+                                app:layout_constraintBottom_toBottomOf="@id/constraint_pr"
+                                app:layout_constraintEnd_toEndOf="@id/constraint_pr"
+                                android:layout_marginStart="16dp">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tv_perempuan"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    app:layout_constraintStart_toStartOf="@id/constraint_txt_pr"
+                                    app:layout_constraintTop_toTopOf="@id/constraint_txt_pr"
+                                    android:text="@string/perempuan"
+                                    android:textSize="10sp"
+                                    tools:ignore="SmallSp" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    app:layout_constraintStart_toStartOf="@id/constraint_txt_pr"
+                                    app:layout_constraintTop_toBottomOf="@id/tv_perempuan"
+                                    android:layout_marginTop="2dp"
+                                    android:text="@string/total_perempuan"
+                                    android:textStyle="bold"
+                                    android:textSize="16sp"
+                                    />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
                     </androidx.constraintlayout.widget.ConstraintLayout>
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
@@ -268,18 +321,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cardview_home"
         android:layout_margin="20dp"
-        android:padding="20dp"
-        android:background="@drawable/custom_button_login"
         android:clickable="true"
         android:foreground="?attr/selectableItemBackground"
-        app:cardBackgroundColor="@color/colorPrimary"
-        android:focusable="true">
+        app:cardBackgroundColor="@color/colorPrimaryLight"
+        android:focusable="true"
+        app:cardCornerRadius="4dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintcari"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingBottom="16dp">
+            android:padding="20dp">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/icon_search"
@@ -288,77 +340,90 @@
                 app:layout_constraintStart_toStartOf="@id/constraintcari"
                 app:layout_constraintTop_toTopOf="@id/constraintcari"
                 app:layout_constraintBottom_toBottomOf="@id/constraintcari"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="23dp"
                 android:src="@drawable/ic_bx_bx_search_alt_2"
                 />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_temukandata"
-                android:layout_width="0dp"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardview_constraint_search"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toEndOf="@id/icon_search"
                 app:layout_constraintTop_toTopOf="@id/constraintcari"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/title_temukan_data"
-                android:textStyle="bold"
-                android:textSize="14sp"
-                android:textColor="#ffffff"
-                />
+                app:layout_constraintBottom_toBottomOf="@id/constraintcari"
+                android:layout_marginStart="20dp"
+                >
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toEndOf="@id/icon_search"
-                app:layout_constraintTop_toBottomOf="@id/tv_temukandata"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="2dp"
-                android:text="@string/subtitle_pencarian"
-                android:textSize="10sp"
-                android:textColor="#ffffff"
-                tools:ignore="SmallSp" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_temukandata"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@id/cardview_constraint_search"
+                    app:layout_constraintTop_toTopOf="@id/cardview_constraint_search"
+                    android:text="@string/title_temukan_data"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:textColor="#ffffff"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@id/cardview_constraint_search"
+                    app:layout_constraintTop_toBottomOf="@id/tv_temukandata"
+                    android:text="@string/subtitle_pencarian"
+                    android:textSize="10sp"
+                    android:textColor="#ffffff"
+                    tools:ignore="SmallSp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_dataterbaru"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_data_baru"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/button_search"
-        android:text="@string/title_data_baru"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="20dp"
-        />
-    
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerDataKK"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        app:layout_constraintTop_toBottomOf="@id/tv_dataterbaru"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/button_tambah_data"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        />
+        android:layout_margin="20dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_dataterbaru"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/constraint_data_baru"
+            app:layout_constraintEnd_toEndOf="@id/constraint_data_baru"
+            app:layout_constraintTop_toTopOf="@id/constraint_data_baru"
+            android:text="@string/title_data_baru"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerDataKK"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_dataterbaru"
+            app:layout_constraintStart_toStartOf="@id/constraint_data_baru"
+            app:layout_constraintEnd_toEndOf="@id/constraint_data_baru"
+            app:layout_constraintBottom_toBottomOf="@id/constraint_data_baru"
+            android:layout_marginTop="20dp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_tambah_data"
         android:layout_width="match_parent"
-        android:layout_height="52dp"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:text="@string/button_tambah_data"
         android:textStyle="bold"
-        android:textColor="#ffffff"
+        android:textColor="@color/white"
         android:background="@drawable/touch_effect_button_tambah"
 
         />
