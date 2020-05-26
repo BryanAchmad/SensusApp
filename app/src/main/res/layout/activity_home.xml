@@ -207,7 +207,7 @@
                                 app:layout_constraintStart_toEndOf="@id/icon_laki"
                                 app:layout_constraintTop_toTopOf="@id/constraint_laki"
                                 app:layout_constraintBottom_toBottomOf="@id/constraint_laki"
-                                android:layout_marginStart="16dp"
+                                android:layout_marginStart="12dp"
                                 >
 
                                 <androidx.appcompat.widget.AppCompatTextView
@@ -280,8 +280,8 @@
                                 app:layout_constraintStart_toEndOf="@id/icon_perempuan"
                                 app:layout_constraintTop_toTopOf="@id/constraint_pr"
                                 app:layout_constraintBottom_toBottomOf="@id/constraint_pr"
-                                app:layout_constraintEnd_toEndOf="@id/constraint_pr"
-                                android:layout_marginStart="16dp">
+
+                                android:layout_marginStart="12dp">
 
                                 <androidx.appcompat.widget.AppCompatTextView
                                     android:id="@+id/tv_perempuan"
