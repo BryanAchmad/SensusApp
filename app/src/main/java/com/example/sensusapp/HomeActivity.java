@@ -2,13 +2,15 @@ package com.example.sensusapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.sensusapp.Adapter.KartuKeluargaAdapter;
+import com.example.sensusapp.Model.KartuKeluarga;
 
 import java.util.ArrayList;
 

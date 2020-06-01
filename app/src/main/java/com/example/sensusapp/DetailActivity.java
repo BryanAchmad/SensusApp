@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.example.sensusapp.Adapter.ViewPagerAdapter;
+import com.example.sensusapp.Fragment.FragmentInformasi;
+import com.example.sensusapp.Fragment.FragmentKeluarga;
 import com.google.android.material.tabs.TabLayout;
 
 public class DetailActivity extends AppCompatActivity {

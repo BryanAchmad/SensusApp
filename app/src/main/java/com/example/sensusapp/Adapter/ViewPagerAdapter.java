@@ -1,4 +1,4 @@
-package com.example.sensusapp;
+package com.example.sensusapp.Adapter;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

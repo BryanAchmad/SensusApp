@@ -1,13 +1,15 @@
-package com.example.sensusapp;
+package com.example.sensusapp.Adapter;
 
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.core.widget.TextViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
+
+import com.example.sensusapp.Model.KartuKeluarga;
+import com.example.sensusapp.R;
 
 import java.util.ArrayList;
 

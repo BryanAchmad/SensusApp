@@ -1,4 +1,4 @@
-package com.example.sensusapp;
+package com.example.sensusapp.Model;
 
 public class KartuKeluarga {
     private String no_kk;
