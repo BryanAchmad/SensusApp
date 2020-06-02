@@ -1,7 +1,8 @@
 package com.example.sensusapp.Model;
 
 public class User {
-    private String id_user;
+    private int id_user;
+    private String token;
     private String created_at;
     private String updated_at;
     private String name;
@@ -13,7 +14,7 @@ public class User {
     private String id_kecamatan;
     private String id_desa;
 
-    public User(String id_user, String created_at, String updated_at, String name, String username, String password, String email, String is_active, String role_id, String id_kecamatan, String id_desa) {
+    public User(int id_user, String created_at, String updated_at, String name, String username, String password, String email, String is_active, String role_id, String id_kecamatan, String id_desa) {
         this.id_user = id_user;
         this.created_at = created_at;
         this.updated_at = updated_at;
@@ -27,32 +28,26 @@ public class User {
         this.id_desa = id_desa;
     }
 
-    public User(String id_user, String name, String username, String password, String email, String is_active, String role_id, String id_kecamatan, String id_desa) {
+    public User(int id_user, String username, String email) {
         this.id_user = id_user;
-        this.name = name;
         this.username = username;
-        this.password = password;
-        this.email = email;
-        this.is_active = is_active;
-        this.role_id = role_id;
-        this.id_kecamatan = id_kecamatan;
-        this.id_desa = id_desa;
-    }
-
-    public User(String id_user, String name, String username, String password, String email) {
-        this.id_user = id_user;
-        this.name = name;
-        this.username = username;
-        this.password = password;
         this.email = email;
     }
 
-    public String getId_user() {
+    public int getId_user() {
         return id_user;
     }
 
-    public void setId_user(String id_user) {
+    public void setId_user(int id_user) {
         this.id_user = id_user;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 
     public String getCreated_at() {
