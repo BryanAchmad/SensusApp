@@ -2,19 +2,18 @@ package com.example.sensusapp.Model;
 
 public class User {
     private int id_user;
-    private String token;
     private String created_at;
     private String updated_at;
     private String name;
     private String username;
     private String password;
     private String email;
-    private String is_active;
+    private boolean is_active;
     private String role_id;
     private String id_kecamatan;
     private String id_desa;
 
-    public User(int id_user, String created_at, String updated_at, String name, String username, String password, String email, String is_active, String role_id, String id_kecamatan, String id_desa) {
+    public User(int id_user, String created_at, String updated_at, String name, String username, String password, String email, boolean is_active, String role_id, String id_kecamatan, String id_desa) {
         this.id_user = id_user;
         this.created_at = created_at;
         this.updated_at = updated_at;
@@ -28,10 +27,10 @@ public class User {
         this.id_desa = id_desa;
     }
 
-    public User(int id_user, String username, String email) {
+    public User(int id_user, String username, String password) {
         this.id_user = id_user;
         this.username = username;
-        this.email = email;
+        this.password = password;
     }
 
     public int getId_user() {
@@ -40,14 +39,6 @@ public class User {
 
     public void setId_user(int id_user) {
         this.id_user = id_user;
-    }
-
-    public String getToken() {
-        return token;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
     }
 
     public String getCreated_at() {
@@ -98,11 +89,11 @@ public class User {
         this.email = email;
     }
 
-    public String getIs_active() {
+    public boolean isIs_active() {
         return is_active;
     }
 
-    public void setIs_active(String is_active) {
+    public void setIs_active(boolean is_active) {
         this.is_active = is_active;
     }
 

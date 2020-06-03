@@ -1,7 +1,7 @@
 package com.example.sensusapp.Api;
 
 public class Result<T> {
-    private int status;
+    private int code;
     private String message;
     private T data;
 
@@ -9,8 +9,8 @@ public class Result<T> {
         this.data = data;
     }
 
-    public int getStatus() {
-        return status;
+    public int getCode() {
+        return code;
     }
 
     public String getMessage() {
@@ -22,6 +22,6 @@ public class Result<T> {
     }
 
     public boolean isSuccessfull() {
-        return status == 200;
+        return data != null;
     }
 }
