@@ -2,6 +2,7 @@ package com.example.sensusapp.Api;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import com.example.sensusapp.Model.User;
 
@@ -44,6 +45,7 @@ public class SharedPrefManager {
 
     public boolean userLoggedIn() {
         SharedPreferences sharedPreferences = mContext.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+
         if(sharedPreferences.getString(KEY_USER_EMAIL, null) != null) {
             return true;
         }
@@ -72,6 +74,13 @@ public class SharedPrefManager {
         SharedPreferences sharedPreferences = mContext.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         return sharedPreferences.getString(KEY_USER_TOKEN, "");
 
+    }
+
+    public void setToken(String token) {
+        SharedPreferences sharedPreferences = mContext.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(KEY_USER_TOKEN, token);
+        editor.apply();
     }
 
 

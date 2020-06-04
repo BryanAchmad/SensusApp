@@ -7,6 +7,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -31,23 +32,37 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
+
     private Button btnLogin;
     private EditText txtusername;
     private EditText txtpass;
 
+    private SharedPrefManager sharedPrefManager = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        sharedPrefManager = SharedPrefManager.getInstance(getApplicationContext());
+        Log.d("Check", sharedPrefManager.userLoggedIn() + "");
+        if(sharedPrefManager.userLoggedIn()) {
+           Intent intent = new Intent(this, HomeActivity.class);
+           startActivity(intent);
+           finish();
+           return;
+        }
+
         setContentView(R.layout.activity_main);
 
         txtusername = (EditText) findViewById(R.id.et_email);
         txtpass = (EditText) findViewById(R.id.et_password);
         btnLogin = (Button) findViewById(R.id.btnlogin);
 
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               userLogin();
+                userLogin();
             }
         });
     }
@@ -62,16 +77,16 @@ public class MainActivity extends AppCompatActivity {
 
         APIservice apIservice = APIurl.createService(APIservice.class, this);
 
-        Call<Result<User>> call = apIservice.login(username, pass);
+        Call<Result<LoginResponse>> call = apIservice.login(username, pass);
 
-        call.enqueue(new Callback<Result<User>>() {
+        call.enqueue(new Callback<Result<LoginResponse>>() {
             @Override
-            public void onResponse(Call<Result<User>> call, Response<Result<User>> response) {
-//                progressDialog.dismiss();
-
+            public void onResponse(Call<Result<LoginResponse>> call, Response<Result<LoginResponse>> response) {
+                Log.d("Bryan", response.body().getCode() + "");
                 if(response.body() != null && response.body().isSuccessfull()) {
                     finish();
-                    SharedPrefManager.getInstance(getApplicationContext()).userLogin(response.body().getData());
+                    SharedPrefManager.getInstance(getApplicationContext()).userLogin(response.body().getData().getUser());
+                    SharedPrefManager.getInstance(getApplicationContext()).setToken(response.body().getData().getToken());
                     startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                 } else {
                     Toast.makeText(getApplicationContext(), "Invalid email or password", Toast.LENGTH_LONG).show();
@@ -79,12 +94,32 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<Result<User>> call, Throwable t) {
-//                progressDialog.dismiss();
+            public void onFailure(Call<Result<LoginResponse>> call, Throwable t) {
                 Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
                 t.printStackTrace();
-
             }
         });
+//        call.enqueue(new Callback<Result<User>>() {
+//            @Override
+//            public void onResponse(Call<Result<User>> call, Response<Result<User>> response) {
+////                progressDialog.dismiss();
+//                Log.d("Bryan", response.body().getCode() + "");
+//                if(response.body() != null && response.body().isSuccessfull()) {
+//                    finish();
+//                    SharedPrefManager.getInstance(getApplicationContext()).userLogin(response.body().getData());
+//                    startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+//                } else {
+//                    Toast.makeText(getApplicationContext(), "Invalid email or password", Toast.LENGTH_LONG).show();
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<Result<User>> call, Throwable t) {
+////                progressDialog.dismiss();
+//                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
+//                t.printStackTrace();
+//
+//            }
+//        });
     }
 }
