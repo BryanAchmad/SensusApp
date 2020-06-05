@@ -35,7 +35,8 @@ public class KartuKeluargaAdapter extends RecyclerView.Adapter<KartuKeluargaAdap
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        final int id = datalist.get(position).getId();
+        //final String id = datalist.get(position).getId()+"";
+        final String id = String.valueOf(datalist.get(position).getId());
         final String no_kk = datalist.get(position).getNo_kk();
         final String nama = datalist.get(position).getNama();
 

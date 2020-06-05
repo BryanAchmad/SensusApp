@@ -76,4 +76,24 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_data_sensus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/view_search"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview_data_sensus"
+            app:layout_constraintTop_toTopOf="@id/constraint_data_sensus"
+            app:layout_constraintStart_toStartOf="@id/constraint_data_sensus"
+            app:layout_constraintEnd_toEndOf="@id/constraint_data_sensus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_20dp"
+            android:layout_marginVertical="@dimen/margin_20dp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

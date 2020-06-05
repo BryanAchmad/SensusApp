@@ -15,6 +15,7 @@ import com.example.sensusapp.Adapter.KartuKeluargaAdapter;
 import com.example.sensusapp.Api.APIservice;
 import com.example.sensusapp.Api.APIurl;
 import com.example.sensusapp.Api.Result;
+import com.example.sensusapp.Api.SharedPrefManager;
 import com.example.sensusapp.Model.KartuKeluarga;
 
 import java.util.ArrayList;
@@ -67,7 +68,7 @@ public class HomeActivity extends AppCompatActivity {
         call.enqueue(new Callback<Result<List<KartuKeluarga>>>() {
             @Override
             public void onResponse(Call<Result<List<KartuKeluarga>>> call, Response<Result<List<KartuKeluarga>>> response) {
-                Log.d("iki  lo datane", response.body().getData() +"");
+               // Log.d("iki  lo datane", SharedPrefManager.getInstance().getToken()+"");
                 if(response.body() != null && response.body().isSuccessfull()) {
                     kartuKeluargas.addAll(response.body().getData());
                     adapter = new KartuKeluargaAdapter(kartuKeluargas, HomeActivity.this);

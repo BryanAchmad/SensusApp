@@ -1,51 +1,39 @@
 package com.example.sensusapp.Model;
 
+import com.example.sensusapp.Model.Master.Desa;
+import com.example.sensusapp.Model.Master.JenisFasilitasAirBersih;
+import com.example.sensusapp.Model.Master.JenisSanitasi;
+import com.example.sensusapp.Model.Master.KonsumsiAirMinum;
+
 import java.util.List;
 
 public class KartuKeluarga {
     private int id;
+    private String created_at;
+    private String updated_at;
     private String no_kk;
     private String nama;
     private String address;
     private String rt;
     private String rw;
     private String dusun;
-    private String desa_id;
+    private int desa_id;
+    private Desa desa;
     private String status_rumah;
     private String status_tanah_garapan;
     private String jumlah_tanah_garapan;
     private String luas_tanah_garapan;
     private boolean status_kemiskinan;
     private int jenis_fasilitas_air_bersih_id;
+    private JenisFasilitasAirBersih jenisFasilitasAirBersih;
     private int jenis_sanitasi_id;
+    private JenisSanitasi jenisSanitasi;
     private int konsumsi_air_minum_id;
+    private KonsumsiAirMinum konsumsiAirMinum;
     private List<AnggotaKeluarga> anggotaKeluargas;
 
-    public KartuKeluarga(int id, String no_kk, String nama, String address, String rt, String rw, String dusun, String desa_id, String status_rumah, String status_tanah_garapan, String jumlah_tanah_garapan, String luas_tanah_garapan, boolean status_kemiskinan, int jenis_fasilitas_air_bersih_id, int jenis_sanitasi_id, int konsumsi_air_minum_id, List<AnggotaKeluarga> anggotaKeluargas) {
-        this.id = id;
-        this.no_kk = no_kk;
-        this.nama = nama;
-        this.address = address;
-        this.rt = rt;
-        this.rw = rw;
-        this.dusun = dusun;
-        this.desa_id = desa_id;
-        this.status_rumah = status_rumah;
-        this.status_tanah_garapan = status_tanah_garapan;
-        this.jumlah_tanah_garapan = jumlah_tanah_garapan;
-        this.luas_tanah_garapan = luas_tanah_garapan;
-        this.status_kemiskinan = status_kemiskinan;
-        this.jenis_fasilitas_air_bersih_id = jenis_fasilitas_air_bersih_id;
-        this.jenis_sanitasi_id = jenis_sanitasi_id;
-        this.konsumsi_air_minum_id = konsumsi_air_minum_id;
-        this.anggotaKeluargas = anggotaKeluargas;
-    }
 
-    public KartuKeluarga(int id, String no_kk, String nama) {
-        this.id = id;
-        this.no_kk = no_kk;
-        this.nama = nama;
-    }
+
 
     public int getId() {
         return id;

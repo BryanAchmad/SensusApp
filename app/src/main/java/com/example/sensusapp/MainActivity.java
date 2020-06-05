@@ -83,9 +83,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Result<LoginResponse>> call, Response<Result<LoginResponse>> response) {
                 Log.d("Bryan", response.body().getCode() + "");
+
                 if(response.body() != null && response.body().isSuccessfull()) {
                     finish();
                     SharedPrefManager.getInstance(getApplicationContext()).userLogin(response.body().getData().getUser());
+                    Log.d("token cok", response.body().getData().getToken());
                     SharedPrefManager.getInstance(getApplicationContext()).setToken(response.body().getData().getToken());
                     startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                 } else {

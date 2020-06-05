@@ -4,20 +4,20 @@ import com.example.sensusapp.Model.User;
 
 public class LoginResponse {
 
-    String Token;
+    String token;
     User user;
 
     public LoginResponse(String token, User user) {
-        Token = token;
+        token = token;
         this.user = user;
     }
 
     public String getToken() {
-        return Token;
+        return token;
     }
 
     public void setToken(String token) {
-        Token = token;
+        token = token;
     }
 
     public User getUser() {

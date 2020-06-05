@@ -21,7 +21,7 @@ public interface APIservice {
             @Field("password") String password
     );
 
-    @GET("sensus")
+    @GET("sensus/")
     Call<Result<List<KartuKeluarga>>> sensus();
 
 }
