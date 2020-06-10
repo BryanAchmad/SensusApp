@@ -1,5 +1,8 @@
 package com.example.sensusapp.Model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.example.sensusapp.Model.Master.Desa;
 import com.example.sensusapp.Model.Master.JenisFasilitasAirBersih;
 import com.example.sensusapp.Model.Master.JenisSanitasi;
@@ -33,14 +36,28 @@ public class KartuKeluarga {
     private List<AnggotaKeluarga> anggotaKeluargas;
 
 
-
-
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(String created_at) {
+        this.created_at = created_at;
+    }
+
+    public String getUpdated_at() {
+        return updated_at;
+    }
+
+    public void setUpdated_at(String updated_at) {
+        this.updated_at = updated_at;
     }
 
     public String getNo_kk() {
@@ -91,12 +108,20 @@ public class KartuKeluarga {
         this.dusun = dusun;
     }
 
-    public String getDesa_id() {
+    public int getDesa_id() {
         return desa_id;
     }
 
-    public void setDesa_id(String desa_id) {
+    public void setDesa_id(int desa_id) {
         this.desa_id = desa_id;
+    }
+
+    public Desa getDesa() {
+        return desa;
+    }
+
+    public void setDesa(Desa desa) {
+        this.desa = desa;
     }
 
     public String getStatus_rumah() {
@@ -147,12 +172,28 @@ public class KartuKeluarga {
         this.jenis_fasilitas_air_bersih_id = jenis_fasilitas_air_bersih_id;
     }
 
+    public JenisFasilitasAirBersih getJenisFasilitasAirBersih() {
+        return jenisFasilitasAirBersih;
+    }
+
+    public void setJenisFasilitasAirBersih(JenisFasilitasAirBersih jenisFasilitasAirBersih) {
+        this.jenisFasilitasAirBersih = jenisFasilitasAirBersih;
+    }
+
     public int getJenis_sanitasi_id() {
         return jenis_sanitasi_id;
     }
 
     public void setJenis_sanitasi_id(int jenis_sanitasi_id) {
         this.jenis_sanitasi_id = jenis_sanitasi_id;
+    }
+
+    public JenisSanitasi getJenisSanitasi() {
+        return jenisSanitasi;
+    }
+
+    public void setJenisSanitasi(JenisSanitasi jenisSanitasi) {
+        this.jenisSanitasi = jenisSanitasi;
     }
 
     public int getKonsumsi_air_minum_id() {
@@ -163,6 +204,14 @@ public class KartuKeluarga {
         this.konsumsi_air_minum_id = konsumsi_air_minum_id;
     }
 
+    public KonsumsiAirMinum getKonsumsiAirMinum() {
+        return konsumsiAirMinum;
+    }
+
+    public void setKonsumsiAirMinum(KonsumsiAirMinum konsumsiAirMinum) {
+        this.konsumsiAirMinum = konsumsiAirMinum;
+    }
+
     public List<AnggotaKeluarga> getAnggotaKeluargas() {
         return anggotaKeluargas;
     }
@@ -170,4 +219,5 @@ public class KartuKeluarga {
     public void setAnggotaKeluargas(List<AnggotaKeluarga> anggotaKeluargas) {
         this.anggotaKeluargas = anggotaKeluargas;
     }
+
 }

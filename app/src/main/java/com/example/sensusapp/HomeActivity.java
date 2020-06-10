@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.sensusapp.Adapter.KartuKeluargaAdapter;
@@ -32,6 +33,7 @@ public class HomeActivity extends AppCompatActivity {
     private ArrayList<KartuKeluarga> list;
     private CardView cardViewSearch;
     private ArrayList<KartuKeluarga> kartuKeluargas = new ArrayList<>();
+    private Button btnTambahData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,11 +50,20 @@ public class HomeActivity extends AppCompatActivity {
 
         parseJSON();
         cardViewSearch = (CardView) findViewById(R.id.button_search);
+        btnTambahData = (Button) findViewById(R.id.button_tambah_data);
 
         cardViewSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this, DetailActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnTambahData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, AddDataActivity.class);
                 startActivity(intent);
             }
         });

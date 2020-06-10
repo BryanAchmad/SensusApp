@@ -1,6 +1,9 @@
 package com.example.sensusapp.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -10,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.sensusapp.DetailActivity;
+import com.example.sensusapp.Fragment.FragmentInformasi;
 import com.example.sensusapp.Model.KartuKeluarga;
 import com.example.sensusapp.R;
 
@@ -43,6 +48,17 @@ public class KartuKeluargaAdapter extends RecyclerView.Adapter<KartuKeluargaAdap
         holder.id.setText(id);
         holder.no_kk.setText(no_kk);
         holder.nama.setText(nama);
+
+        holder.cardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(holder.cardview.getContext(), DetailActivity.class);
+                Log.d("NO KK", datalist.get(position).getNo_kk());
+                intent.putExtra("no_kk", no_kk);
+                holder.cardview.getContext().startActivity(intent);
+
+            }
+        });
     }
 
     @Override

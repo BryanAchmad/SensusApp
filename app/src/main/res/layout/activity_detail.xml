@@ -77,7 +77,7 @@
             app:layout_constraintStart_toStartOf="@id/constraint_detail_kk"
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="4dp"
-            android:text="@string/nokk"
+
             android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="#ffffff"
@@ -88,10 +88,9 @@
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager_detail"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/view_detail"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="0dp"
+       app:layout_constraintTop_toBottomOf="@+id/constraint_detail_kk"
+        app:layout_constraintBottom_toBottomOf="parent"
         >
         
         <com.google.android.material.tabs.TabLayout
