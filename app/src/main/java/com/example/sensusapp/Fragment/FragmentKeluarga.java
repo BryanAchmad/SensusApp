@@ -45,9 +45,10 @@ public class FragmentKeluarga extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
 
-
         txtNik = view.findViewById(R.id.textview_detail_keluarga_nik);
         txtNama = view.findViewById(R.id.textview_detail_keluarga_nama);
+
+
 
         return view;
     }

@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailAnggotaKeluargaActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_detail_anggota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/backbutton_detail_anggota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:src="@drawable/ic_arrow_back_black_24dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_detail_anggota_title_toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Detail Anggota keluarga"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            />
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:id="@+id/scrollview_detail_anggota"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_detail_anggota"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="-42dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_detail_anggota"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- NIK -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_title_nik"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NIK"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                app:layout_constraintTop_toTopOf="@+id/constraint_detail_anggota" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_value_nik"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="72130873187"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_title_nik" />
+
+            <!-- Nama -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_title_nama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Nama"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_value_nik" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_value_nama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Hanan"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_title_nama" />
+
+            <!-- Jenis Kelamin -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_title_jeniskelamin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Jenis Kelamin"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_value_nama" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_value_jeniskelamin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Laki - laki"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_title_jeniskelamin" />
+
+            <!-- tempat lahir -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_title_tempatlahir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Tempat Lahir"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_value_jeniskelamin" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_value_tempatlahir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Jombang"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_title_tempatlahir" />
+
+            <!-- tanggal lahir -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_title_tanggallahir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Tanggal Lahir"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_value_tempatlahir" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_value_tanggallahir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="08 - 1 - 1998"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_title_tanggallahir" />
+
+            <!-- golongan darah -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_title_goldar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Golongan Darah"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_value_tanggallahir" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_value_goldar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="O"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_title_goldar" />
+
+            <!-- agama -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_title_agama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Agama"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_value_goldar" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_value_agama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Islam"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_title_agama" />
+
+            <!-- status -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_title_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Status"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_value_agama" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_value_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Kawin"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_title_status" />
+
+            <!-- relasi -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_title_relasi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Relasi"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_value_status" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_value_relasi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Kepala Keluarga"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_title_relasi" />
+
+            <!-- pendidikan -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_title_pendidikan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Pendidikan"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_value_relasi" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_value_pendidikan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Tamat SD/Sederajat"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_title_pendidikan" />
+
+            <!-- status pendidikan sekarang -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_title_statuspendidikan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Bersekolah"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_value_pendidikan" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_value_statuspendidikan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Bersekolah"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_title_statuspendidikan" />
+
+            <!-- pekerjaan -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_title_pekerjaan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_value_statuspendidikan"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                android:text="Pekerjaan"
+                android:textSize="12sp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_value_pekerjaan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_title_pekerjaan"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                android:text="Petani"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+
+            <!-- ibu -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_title_ibu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_value_pekerjaan"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                android:text="Ibu"
+                android:textSize="12sp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_value_ibu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_title_ibu"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                android:text="Sukijah"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+
+            <!-- ayah -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_title_ayah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_value_ibu"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                android:text="Ayah"
+                android:textSize="12sp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_value_ayah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_title_ayah"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                android:text="Sukijo"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+
+            <!-- yatim -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_title_yatim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_value_ayah"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                android:text="Tidak"
+                android:textSize="12sp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_value_yatim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_title_yatim"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                android:text="Tidak"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+
+            <!-- piatu -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_title_piatu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_value_yatim"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                android:text="Piatu"
+                android:textSize="12sp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_value_piatu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_title_piatu"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                android:text="Tidak"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+
+            <!-- status penerimaan bantuan -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_title_statusbantuan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_value_piatu"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                android:text="Status Penerimaan Bantuan"
+                android:textSize="12sp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_value_statusbantuan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_title_statusbantuan"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                android:text="Tidak"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+
+            <!-- disabilitas -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_title_disabilitas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_value_statusbantuan"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                android:text="Disabilitas"
+                android:textSize="12sp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_value_disabilitas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_title_disabilitas"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                android:text="Tidak"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+
+            <!-- keanggotaan ormas -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_title_ormas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_value_disabilitas"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                android:text="Keanggotan Ormas"
+                android:textSize="12sp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail_anggota_value_ormas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_anggota_title_ormas"
+                app:layout_constraintStart_toStartOf="@+id/constraint_detail_anggota"
+                android:text="Tidak"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

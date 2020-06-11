@@ -1,12 +1,15 @@
 package com.example.sensusapp.Model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.example.sensusapp.Model.Master.Disabilitas;
 import com.example.sensusapp.Model.Master.Relasi;
 import com.example.sensusapp.Model.Master.Pekerjaan;
 import com.example.sensusapp.Model.Master.Pendidikan;
 import com.example.sensusapp.Model.Master.Status;
 
-public class AnggotaKeluarga {
+public class AnggotaKeluarga implements Parcelable {
 
     private int id;
     private String created_at;
@@ -67,6 +70,49 @@ public class AnggotaKeluarga {
         this.disabilitas = disabilitas;
         this.keanggotaan_ormas = keanggotaan_ormas;
     }
+
+    protected AnggotaKeluarga(Parcel in) {
+        id = in.readInt();
+        created_at = in.readString();
+        updated_at = in.readString();
+        nik = in.readString();
+        kartu_keluarga_id = in.readInt();
+        nama = in.readString();
+        jenis_kelamin = in.readString();
+        tempat_lahir = in.readString();
+        tanggal_lahir = in.readString();
+        golongan_darah = in.readString();
+        agama = in.readString();
+        status_id = in.readInt();
+        status = in.readParcelable(Status.class.getClassLoader());
+        relasi_id = in.readInt();
+        relasi = in.readParcelable(Relasi.class.getClassLoader());
+        pendidikan_id = in.readInt();
+        pendidikan = in.readParcelable(Pendidikan.class.getClassLoader());
+        status_pendidikan_sekarang = in.readString();
+        pekerjaan_id = in.readInt();
+        pekerjaan = in.readParcelable(Pekerjaan.class.getClassLoader());
+        ibu = in.readString();
+        ayah = in.readString();
+        yatim = in.readByte() != 0;
+        piatu = in.readByte() != 0;
+        status_penerima_bantuan = in.readString();
+        disabilitas_id = in.readInt();
+        disabilitas = in.readParcelable(Disabilitas.class.getClassLoader());
+        keanggotaan_ormas = in.readString();
+    }
+
+    public static final Creator<AnggotaKeluarga> CREATOR = new Creator<AnggotaKeluarga>() {
+        @Override
+        public AnggotaKeluarga createFromParcel(Parcel in) {
+            return new AnggotaKeluarga(in);
+        }
+
+        @Override
+        public AnggotaKeluarga[] newArray(int size) {
+            return new AnggotaKeluarga[size];
+        }
+    };
 
     public int getId() {
         return id;
@@ -290,5 +336,42 @@ public class AnggotaKeluarga {
 
     public void setKeanggotaan_ormas(String keanggotaan_ormas) {
         this.keanggotaan_ormas = keanggotaan_ormas;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(created_at);
+        dest.writeString(updated_at);
+        dest.writeString(nik);
+        dest.writeInt(kartu_keluarga_id);
+        dest.writeString(nama);
+        dest.writeString(jenis_kelamin);
+        dest.writeString(tempat_lahir);
+        dest.writeString(tanggal_lahir);
+        dest.writeString(golongan_darah);
+        dest.writeString(agama);
+        dest.writeInt(status_id);
+        dest.writeParcelable(status, flags);
+        dest.writeInt(relasi_id);
+        dest.writeParcelable(relasi, flags);
+        dest.writeInt(pendidikan_id);
+        dest.writeParcelable(pendidikan, flags);
+        dest.writeString(status_pendidikan_sekarang);
+        dest.writeInt(pekerjaan_id);
+        dest.writeParcelable(pekerjaan, flags);
+        dest.writeString(ibu);
+        dest.writeString(ayah);
+        dest.writeByte((byte) (yatim ? 1 : 0));
+        dest.writeByte((byte) (piatu ? 1 : 0));
+        dest.writeString(status_penerima_bantuan);
+        dest.writeInt(disabilitas_id);
+        dest.writeParcelable(disabilitas, flags);
+        dest.writeString(keanggotaan_ormas);
     }
 }

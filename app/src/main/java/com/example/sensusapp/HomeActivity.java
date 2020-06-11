@@ -54,7 +54,7 @@ public class HomeActivity extends AppCompatActivity {
         cardViewSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, DetailActivity.class);
+                Intent intent = new Intent(HomeActivity.this, SearchActivity.class);
                 startActivity(intent);
             }
         });
