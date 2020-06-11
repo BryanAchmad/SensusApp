@@ -1,7 +1,7 @@
 package com.example.sensusapp.Model;
 
 import com.example.sensusapp.Model.Master.Disabilitas;
-import com.example.sensusapp.Model.Master.HubunganKK;
+import com.example.sensusapp.Model.Master.Relasi;
 import com.example.sensusapp.Model.Master.Pekerjaan;
 import com.example.sensusapp.Model.Master.Pendidikan;
 import com.example.sensusapp.Model.Master.Status;
@@ -22,7 +22,7 @@ public class AnggotaKeluarga {
     private int status_id;
     private Status status;
     private int relasi_id;
-    private HubunganKK hubunganKK;
+    private Relasi relasi;
     private int pendidikan_id;
     private Pendidikan pendidikan;
     private String status_pendidikan_sekarang;
@@ -37,7 +37,7 @@ public class AnggotaKeluarga {
     private Disabilitas disabilitas;
     private String keanggotaan_ormas;
 
-    public AnggotaKeluarga(int id, String created_at, String updated_at, String nik, int kartu_keluarga_id, String nama, String jenis_kelamin, String tempat_lahir, String tanggal_lahir, String golongan_darah, String agama, int status_id, Status status, int relasi_id, HubunganKK hubunganKK, int pendidikan_id, Pendidikan pendidikan, String status_pendidikan_sekarang, int pekerjaan_id, Pekerjaan pekerjaan, String ibu, String ayah, boolean yatim, boolean piatu, String status_penerima_bantuan, int disabilitas_id, Disabilitas disabilitas, String keanggotaan_ormas) {
+    public AnggotaKeluarga(int id, String created_at, String updated_at, String nik, int kartu_keluarga_id, String nama, String jenis_kelamin, String tempat_lahir, String tanggal_lahir, String golongan_darah, String agama, int status_id, Status status, int relasi_id, Relasi relasi, int pendidikan_id, Pendidikan pendidikan, String status_pendidikan_sekarang, int pekerjaan_id, Pekerjaan pekerjaan, String ibu, String ayah, boolean yatim, boolean piatu, String status_penerima_bantuan, int disabilitas_id, Disabilitas disabilitas, String keanggotaan_ormas) {
         this.id = id;
         this.created_at = created_at;
         this.updated_at = updated_at;
@@ -52,7 +52,7 @@ public class AnggotaKeluarga {
         this.status_id = status_id;
         this.status = status;
         this.relasi_id = relasi_id;
-        this.hubunganKK = hubunganKK;
+        this.relasi = relasi;
         this.pendidikan_id = pendidikan_id;
         this.pendidikan = pendidikan;
         this.status_pendidikan_sekarang = status_pendidikan_sekarang;
@@ -65,32 +65,6 @@ public class AnggotaKeluarga {
         this.status_penerima_bantuan = status_penerima_bantuan;
         this.disabilitas_id = disabilitas_id;
         this.disabilitas = disabilitas;
-        this.keanggotaan_ormas = keanggotaan_ormas;
-    }
-
-    public AnggotaKeluarga(int id, String created_at, String updated_at, String nik, int kartu_keluarga_id, String nama, String jenis_kelamin, String tempat_lahir, String tanggal_lahir, String golongan_darah, String agama, int status_id, int relasi_id, int pendidikan_id, String status_pendidikan_sekarang, int pekerjaan_id, String ibu, String ayah, boolean yatim, boolean piatu, String status_penerima_bantuan, int disabilitas_id, String keanggotaan_ormas) {
-        this.id = id;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
-        this.nik = nik;
-        this.kartu_keluarga_id = kartu_keluarga_id;
-        this.nama = nama;
-        this.jenis_kelamin = jenis_kelamin;
-        this.tempat_lahir = tempat_lahir;
-        this.tanggal_lahir = tanggal_lahir;
-        this.golongan_darah = golongan_darah;
-        this.agama = agama;
-        this.status_id = status_id;
-        this.relasi_id = relasi_id;
-        this.pendidikan_id = pendidikan_id;
-        this.status_pendidikan_sekarang = status_pendidikan_sekarang;
-        this.pekerjaan_id = pekerjaan_id;
-        this.ibu = ibu;
-        this.ayah = ayah;
-        this.yatim = yatim;
-        this.piatu = piatu;
-        this.status_penerima_bantuan = status_penerima_bantuan;
-        this.disabilitas_id = disabilitas_id;
         this.keanggotaan_ormas = keanggotaan_ormas;
     }
 
@@ -206,12 +180,12 @@ public class AnggotaKeluarga {
         this.relasi_id = relasi_id;
     }
 
-    public HubunganKK getHubunganKK() {
-        return hubunganKK;
+    public Relasi getRelasi() {
+        return relasi;
     }
 
-    public void setHubunganKK(HubunganKK hubunganKK) {
-        this.hubunganKK = hubunganKK;
+    public void setRelasi(Relasi relasi) {
+        this.relasi = relasi;
     }
 
     public int getPendidikan_id() {

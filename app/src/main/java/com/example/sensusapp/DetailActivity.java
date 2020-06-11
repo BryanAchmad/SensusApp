@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.sensusapp.Adapter.KartuKeluargaAdapter;
 import com.example.sensusapp.Adapter.ViewPagerAdapter;
 import com.example.sensusapp.Api.APIservice;
 import com.example.sensusapp.Api.APIurl;
@@ -18,10 +17,7 @@ import com.example.sensusapp.Api.Result;
 import com.example.sensusapp.Fragment.FragmentInformasi;
 import com.example.sensusapp.Fragment.FragmentKeluarga;
 import com.example.sensusapp.Model.KartuKeluarga;
-import com.example.sensusapp.Model.Master.JenisSanitasi;
 import com.google.android.material.tabs.TabLayout;
-
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -74,14 +70,13 @@ public class DetailActivity extends AppCompatActivity {
                 if (response.body() != null && response.body().isSuccessfull()) {
 
                     txtNoKK.setText(response.body().getData().getNo_kk());
+                    Log.d("sanitasi", response.body().getData().getJenis_sanitasi().getJenis());
 
+                    FragmentInformasi activeFragment = (FragmentInformasi) adapter.getItem(0);
+                    FragmentKeluarga fragmentKeluarga = (FragmentKeluarga) adapter.getItem(1);
+                    ((FragmentInformasi) activeFragment).setInformasiGeneral(response.body().getData());
+                    ((FragmentKeluarga) fragmentKeluarga).setInformasiKeluarga(response.body().getData().getAnggota_keluarga());
 
-
-
-                    int pos = viewPager.getCurrentItem();
-                    FragmentInformasi activeFragment = (FragmentInformasi) adapter.getItem(pos);
-                    if(pos == 0)
-                        ((FragmentInformasi)activeFragment).setInformasiGeneral(response.body().getData());
 
 
                 }

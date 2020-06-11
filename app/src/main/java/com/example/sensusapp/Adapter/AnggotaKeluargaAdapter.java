@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.sensusapp.Fragment.FragmentKeluarga;
 import com.example.sensusapp.Model.AnggotaKeluarga;
 import com.example.sensusapp.Model.KartuKeluarga;
 import com.example.sensusapp.R;
@@ -19,11 +20,12 @@ import java.util.ArrayList;
 public class AnggotaKeluargaAdapter extends RecyclerView.Adapter<AnggotaKeluargaAdapter.ViewHolder> {
 
 
-    private ArrayList<KartuKeluarga> kartuKeluargas = new ArrayList<>();
+    private ArrayList<AnggotaKeluarga> anggotaKeluargas = new ArrayList<>();
     private Context context;
+    private KartuKeluargaAdapter adapter;
 
-    public AnggotaKeluargaAdapter(ArrayList<KartuKeluarga> kartuKeluargas, Context context) {
-        this.kartuKeluargas = kartuKeluargas;
+    public AnggotaKeluargaAdapter(ArrayList<AnggotaKeluarga> anggotaKeluargas, Context context) {
+        this.anggotaKeluargas = anggotaKeluargas;
         this.context = context;
     }
 
@@ -37,8 +39,11 @@ public class AnggotaKeluargaAdapter extends RecyclerView.Adapter<AnggotaKeluarga
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        final String nama = kartuKeluargas.get(position).getAnggotaKeluargas().get(5).getNama();
-        final String nik = kartuKeluargas.get(position).getAnggotaKeluargas().get(3).getNik();
+//        final String nama = kartuKeluargas.get(position).getAnggota_keluarga().get(position).getNama();
+//        final String nik = kartuKeluargas.get(position).getAnggota_keluarga().get(position).getNik();
+
+        final String nik = anggotaKeluargas.get(position).getNik();
+        final String nama = anggotaKeluargas.get(position).getNama();
 
         holder.nik.setText(nik);
         holder.nama.setText(nama);
@@ -48,7 +53,7 @@ public class AnggotaKeluargaAdapter extends RecyclerView.Adapter<AnggotaKeluarga
 
     @Override
     public int getItemCount() {
-        return kartuKeluargas.size();
+        return anggotaKeluargas.size();
     }
 
 
@@ -61,6 +66,7 @@ public class AnggotaKeluargaAdapter extends RecyclerView.Adapter<AnggotaKeluarga
 
             nik = (TextView) itemView.findViewById(R.id.textview_detail_keluarga_nik);
             nama = (TextView) itemView.findViewById(R.id.textview_detail_keluarga_nama);
+            cardView = (CardView) itemView.findViewById(R.id.cardview_detail_kartu_keluarga);
         }
     }
 }

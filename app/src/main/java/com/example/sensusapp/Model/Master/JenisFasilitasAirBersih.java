@@ -3,31 +3,14 @@ package com.example.sensusapp.Model.Master;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class JenisFasilitasAirBersih implements Parcelable {
+public class JenisFasilitasAirBersih {
     private int id;
-    private String fasilitas;
+    private String jenis;
 
-    public JenisFasilitasAirBersih(int id, String fasilitas) {
+    public JenisFasilitasAirBersih(int id, String jenis) {
         this.id = id;
-        this.fasilitas = fasilitas;
+        this.jenis = jenis;
     }
-
-    protected JenisFasilitasAirBersih(Parcel in) {
-        id = in.readInt();
-        fasilitas = in.readString();
-    }
-
-    public static final Creator<JenisFasilitasAirBersih> CREATOR = new Creator<JenisFasilitasAirBersih>() {
-        @Override
-        public JenisFasilitasAirBersih createFromParcel(Parcel in) {
-            return new JenisFasilitasAirBersih(in);
-        }
-
-        @Override
-        public JenisFasilitasAirBersih[] newArray(int size) {
-            return new JenisFasilitasAirBersih[size];
-        }
-    };
 
     public int getId() {
         return id;
@@ -37,22 +20,11 @@ public class JenisFasilitasAirBersih implements Parcelable {
         this.id = id;
     }
 
-    public String getFasilitas() {
-        return fasilitas;
+    public String getJenis() {
+        return jenis;
     }
 
-    public void setFasilitas(String fasilitas) {
-        this.fasilitas = fasilitas;
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(id);
-        dest.writeString(fasilitas);
+    public void setJenis(String jenis) {
+        this.jenis = jenis;
     }
 }

@@ -30,7 +30,6 @@ public class HomeActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private KartuKeluargaAdapter adapter;
-    private ArrayList<KartuKeluarga> list;
     private CardView cardViewSearch;
     private ArrayList<KartuKeluarga> kartuKeluargas = new ArrayList<>();
     private Button btnTambahData;

@@ -3,6 +3,8 @@ package com.example.sensusapp.Model.Master;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.gson.annotations.Expose;
+
 public class JenisSanitasi {
     private int id;
     private String jenis;
@@ -11,7 +13,6 @@ public class JenisSanitasi {
         this.id = id;
         this.jenis = jenis;
     }
-
 
     public int getId() {
         return id;

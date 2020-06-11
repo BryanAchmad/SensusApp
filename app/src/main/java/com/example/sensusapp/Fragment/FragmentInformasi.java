@@ -1,19 +1,16 @@
 package com.example.sensusapp.Fragment;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.sensusapp.Model.KartuKeluarga;
-import com.example.sensusapp.Model.Master.JenisSanitasi;
 import com.example.sensusapp.R;
 
 public class FragmentInformasi extends Fragment {
@@ -76,9 +73,9 @@ public class FragmentInformasi extends Fragment {
                 statuskemiskinan.setText("Tidak");
             }
 
-
-            jenissanitasi.setText(kartuKeluarga.getJenisSanitasi().getJenis());
-
+            jenisfasilitasairbersih.setText(kartuKeluarga.getJenis_fasilitas_air_bersih().getJenis());
+            jenissanitasi.setText(kartuKeluarga.getJenis_sanitasi().getJenis());
+            konsumsiairminum.setText(kartuKeluarga.getKonsumsi_air_minum().getJenis());
 
     }
 }

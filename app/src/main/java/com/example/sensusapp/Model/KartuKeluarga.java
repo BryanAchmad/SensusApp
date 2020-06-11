@@ -1,8 +1,5 @@
 package com.example.sensusapp.Model;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 import com.example.sensusapp.Model.Master.Desa;
 import com.example.sensusapp.Model.Master.JenisFasilitasAirBersih;
 import com.example.sensusapp.Model.Master.JenisSanitasi;
@@ -28,13 +25,39 @@ public class KartuKeluarga {
     private String luas_tanah_garapan;
     private boolean status_kemiskinan;
     private int jenis_fasilitas_air_bersih_id;
-    private JenisFasilitasAirBersih jenisFasilitasAirBersih;
+    private JenisFasilitasAirBersih jenis_fasilitas_air_bersih;
     private int jenis_sanitasi_id;
-    private JenisSanitasi jenisSanitasi;
+    private JenisSanitasi jenis_sanitasi;
     private int konsumsi_air_minum_id;
-    private KonsumsiAirMinum konsumsiAirMinum;
-    private List<AnggotaKeluarga> anggotaKeluargas;
+    private KonsumsiAirMinum konsumsi_air_minum;
+    private List<AnggotaKeluarga> anggota_keluarga;
 
+
+    public KartuKeluarga(int id, String created_at, String updated_at, String no_kk, String nama, String address, String rt, String rw, String dusun, int desa_id, Desa desa, String status_rumah, String status_tanah_garapan, String jumlah_tanah_garapan, String luas_tanah_garapan, boolean status_kemiskinan, int jenis_fasilitas_air_bersih_id, JenisFasilitasAirBersih jenis_fasilitas_air_bersih, int jenis_sanitasi_id, JenisSanitasi jenis_sanitasi, int konsumsi_air_minum_id, KonsumsiAirMinum konsumsi_air_minum, List<AnggotaKeluarga> anggota_keluarga) {
+        this.id = id;
+        this.created_at = created_at;
+        this.updated_at = updated_at;
+        this.no_kk = no_kk;
+        this.nama = nama;
+        this.address = address;
+        this.rt = rt;
+        this.rw = rw;
+        this.dusun = dusun;
+        this.desa_id = desa_id;
+        this.desa = desa;
+        this.status_rumah = status_rumah;
+        this.status_tanah_garapan = status_tanah_garapan;
+        this.jumlah_tanah_garapan = jumlah_tanah_garapan;
+        this.luas_tanah_garapan = luas_tanah_garapan;
+        this.status_kemiskinan = status_kemiskinan;
+        this.jenis_fasilitas_air_bersih_id = jenis_fasilitas_air_bersih_id;
+        this.jenis_fasilitas_air_bersih = jenis_fasilitas_air_bersih;
+        this.jenis_sanitasi_id = jenis_sanitasi_id;
+        this.jenis_sanitasi = jenis_sanitasi;
+        this.konsumsi_air_minum_id = konsumsi_air_minum_id;
+        this.konsumsi_air_minum = konsumsi_air_minum;
+        this.anggota_keluarga = anggota_keluarga;
+    }
 
     public int getId() {
         return id;
@@ -172,12 +195,12 @@ public class KartuKeluarga {
         this.jenis_fasilitas_air_bersih_id = jenis_fasilitas_air_bersih_id;
     }
 
-    public JenisFasilitasAirBersih getJenisFasilitasAirBersih() {
-        return jenisFasilitasAirBersih;
+    public JenisFasilitasAirBersih getJenis_fasilitas_air_bersih() {
+        return jenis_fasilitas_air_bersih;
     }
 
-    public void setJenisFasilitasAirBersih(JenisFasilitasAirBersih jenisFasilitasAirBersih) {
-        this.jenisFasilitasAirBersih = jenisFasilitasAirBersih;
+    public void setJenis_fasilitas_air_bersih(JenisFasilitasAirBersih jenis_fasilitas_air_bersih) {
+        this.jenis_fasilitas_air_bersih = jenis_fasilitas_air_bersih;
     }
 
     public int getJenis_sanitasi_id() {
@@ -188,12 +211,12 @@ public class KartuKeluarga {
         this.jenis_sanitasi_id = jenis_sanitasi_id;
     }
 
-    public JenisSanitasi getJenisSanitasi() {
-        return jenisSanitasi;
+    public JenisSanitasi getJenis_sanitasi() {
+        return jenis_sanitasi;
     }
 
-    public void setJenisSanitasi(JenisSanitasi jenisSanitasi) {
-        this.jenisSanitasi = jenisSanitasi;
+    public void setJenis_sanitasi(JenisSanitasi jenis_sanitasi) {
+        this.jenis_sanitasi = jenis_sanitasi;
     }
 
     public int getKonsumsi_air_minum_id() {
@@ -204,20 +227,19 @@ public class KartuKeluarga {
         this.konsumsi_air_minum_id = konsumsi_air_minum_id;
     }
 
-    public KonsumsiAirMinum getKonsumsiAirMinum() {
-        return konsumsiAirMinum;
+    public KonsumsiAirMinum getKonsumsi_air_minum() {
+        return konsumsi_air_minum;
     }
 
-    public void setKonsumsiAirMinum(KonsumsiAirMinum konsumsiAirMinum) {
-        this.konsumsiAirMinum = konsumsiAirMinum;
+    public void setKonsumsi_air_minum(KonsumsiAirMinum konsumsi_air_minum) {
+        this.konsumsi_air_minum = konsumsi_air_minum;
     }
 
-    public List<AnggotaKeluarga> getAnggotaKeluargas() {
-        return anggotaKeluargas;
+    public List<AnggotaKeluarga> getAnggota_keluarga() {
+        return anggota_keluarga;
     }
 
-    public void setAnggotaKeluargas(List<AnggotaKeluarga> anggotaKeluargas) {
-        this.anggotaKeluargas = anggotaKeluargas;
+    public void setAnggota_keluarga(List<AnggotaKeluarga> anggota_keluarga) {
+        this.anggota_keluarga = anggota_keluarga;
     }
-
 }
