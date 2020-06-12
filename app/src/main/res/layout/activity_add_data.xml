@@ -37,367 +37,378 @@
             />
     </androidx.appcompat.widget.Toolbar>
 
-    <ScrollView
-        android:id="@+id/scrollview_add_data"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:fillViewport="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@id/toolbar_add_data"
-        app:layout_constraintBottom_toTopOf="@id/button_add_data_simpan"
+<!--    <ScrollView-->
+<!--        android:id="@+id/scrollview_add_data"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:fillViewport="true"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--       app:layout_constraintTop_toBottomOf="@id/toolbar_add_data"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/button_add_data_simpan"-->
 
-        >
+<!--        >-->
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraint_add_data"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="20dp">
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:id="@+id/constraint_add_data"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:padding="20dp">-->
 
-            <!-- No KK -->
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/textview_add_data_nokk"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="No KK"
-                android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="@id/constraint_add_data"
-                app:layout_constraintTop_toTopOf="@id/constraint_add_data" />
+<!--            &lt;!&ndash; No KK &ndash;&gt;-->
+<!--            <androidx.appcompat.widget.AppCompatTextView-->
+<!--                android:id="@+id/textview_add_data_nokk"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="No KK"-->
+<!--                android:textSize="12sp"-->
+<!--                app:layout_constraintStart_toStartOf="@id/constraint_add_data"-->
+<!--                app:layout_constraintTop_toTopOf="@id/constraint_add_data" />-->
 
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/edittext_add_data_nokk"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/custom_edittext"
-                android:hint="eg:289831287631873"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="@id/constraint_add_data"
-                app:layout_constraintStart_toStartOf="@id/constraint_add_data"
-                app:layout_constraintTop_toBottomOf="@id/textview_add_data_nokk" />
+<!--            <androidx.appcompat.widget.AppCompatEditText-->
+<!--                android:id="@+id/edittext_add_data_nokk"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="52dp"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:background="@drawable/custom_edittext"-->
+<!--                android:hint="eg:289831287631873"-->
+<!--                android:textSize="12sp"-->
+<!--                app:layout_constraintEnd_toEndOf="@id/constraint_add_data"-->
+<!--                app:layout_constraintStart_toStartOf="@id/constraint_add_data"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/textview_add_data_nokk" />-->
 
-            <LinearLayout
-                android:id="@+id/linearlayout_add_data_dusun"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="@id/constraint_add_data"
-                app:layout_constraintStart_toStartOf="@id/constraint_add_data"
-                app:layout_constraintTop_toBottomOf="@id/edittext_add_data_nokk">
+<!--            <LinearLayout-->
+<!--                android:id="@+id/linearlayout_add_data_dusun"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:orientation="horizontal"-->
+<!--                app:layout_constraintEnd_toEndOf="@id/constraint_add_data"-->
+<!--                app:layout_constraintStart_toStartOf="@id/constraint_add_data"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/edittext_add_data_nokk">-->
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical">-->
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/textview_add_data_dusun"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Dusun"
-                        android:textSize="12sp" />
+<!--                    <androidx.appcompat.widget.AppCompatTextView-->
+<!--                        android:id="@+id/textview_add_data_dusun"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Dusun"-->
+<!--                        android:textSize="12sp" />-->
 
-                    <androidx.appcompat.widget.AppCompatEditText
-                        android:id="@+id/edittext_add_data_dusun"
-                        android:layout_width="180dp"
-                        android:layout_height="52dp"
-                        android:layout_marginTop="8dp"
-                        android:background="@drawable/custom_edittext"
-                        android:hint="Gudo"
-                        android:textSize="12sp" />
+<!--                    <androidx.appcompat.widget.AppCompatEditText-->
+<!--                        android:id="@+id/edittext_add_data_dusun"-->
+<!--                        android:layout_width="180dp"-->
+<!--                        android:layout_height="52dp"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:background="@drawable/custom_edittext"-->
+<!--                        android:hint="Gudo"-->
+<!--                        android:textSize="12sp" />-->
 
-                </LinearLayout>
+<!--                </LinearLayout>-->
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="22dp"
-                    android:orientation="vertical">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="22dp"-->
+<!--                    android:orientation="vertical">-->
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/textview_add_data_rt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+<!--                    <androidx.appcompat.widget.AppCompatTextView-->
+<!--                        android:id="@+id/textview_add_data_rt"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
 
-                        android:text="RT"
-                        android:textSize="12sp" />
+<!--                        android:text="RT"-->
+<!--                        android:textSize="12sp" />-->
 
-                    <androidx.appcompat.widget.AppCompatEditText
-                        android:id="@+id/edittext_add_data_rt"
-                        android:layout_width="52dp"
-                        android:layout_height="52dp"
-                        android:layout_marginTop="8dp"
-                        android:background="@drawable/custom_edittext"
-                        android:hint="08"
-                        android:textSize="12sp" />
+<!--                    <androidx.appcompat.widget.AppCompatEditText-->
+<!--                        android:id="@+id/edittext_add_data_rt"-->
+<!--                        android:layout_width="52dp"-->
+<!--                        android:layout_height="52dp"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:background="@drawable/custom_edittext"-->
+<!--                        android:hint="08"-->
+<!--                        android:textSize="12sp" />-->
 
-                </LinearLayout>
+<!--                </LinearLayout>-->
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="22dp"
-                    android:orientation="vertical">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="22dp"-->
+<!--                    android:orientation="vertical">-->
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/textview_add_data_rw"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+<!--                    <androidx.appcompat.widget.AppCompatTextView-->
+<!--                        android:id="@+id/textview_add_data_rw"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
 
-                        android:text="RW"
-                        android:textSize="12sp" />
+<!--                        android:text="RW"-->
+<!--                        android:textSize="12sp" />-->
 
-                    <androidx.appcompat.widget.AppCompatEditText
-                        android:id="@+id/edittext_add_data_rw"
-                        android:layout_width="52dp"
-                        android:layout_height="52dp"
-                        android:layout_marginTop="8dp"
-                        android:background="@drawable/custom_edittext"
-                        android:hint="10"
-                        android:textSize="12sp" />
+<!--                    <androidx.appcompat.widget.AppCompatEditText-->
+<!--                        android:id="@+id/edittext_add_data_rw"-->
+<!--                        android:layout_width="52dp"-->
+<!--                        android:layout_height="52dp"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:background="@drawable/custom_edittext"-->
+<!--                        android:hint="10"-->
+<!--                        android:textSize="12sp" />-->
 
-                </LinearLayout>
+<!--                </LinearLayout>-->
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
-            <!-- RT -->
+<!--            &lt;!&ndash; RT &ndash;&gt;-->
 
-            <!-- RW -->
-            <!-- Status Rumah -->
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/textview_add_data_statusrumah"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Status Rumah"
-                android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="@id/constraint_add_data"
-                app:layout_constraintTop_toBottomOf="@id/linearlayout_add_data_dusun" />
+<!--            &lt;!&ndash; RW &ndash;&gt;-->
+<!--            &lt;!&ndash; Status Rumah &ndash;&gt;-->
+<!--            <androidx.appcompat.widget.AppCompatTextView-->
+<!--                android:id="@+id/textview_add_data_statusrumah"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:text="Status Rumah"-->
+<!--                android:textSize="12sp"-->
+<!--                app:layout_constraintStart_toStartOf="@id/constraint_add_data"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/linearlayout_add_data_dusun" />-->
 
-            <!--            <androidx.appcompat.widget.AppCompatEditText-->
-            <!--                android:id="@+id/edittext_add_data_statusrumah"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="52dp"-->
-            <!--                android:layout_marginTop="8dp"-->
-            <!--               -->
-            <!--                app:layout_constraintTop_toBottomOf="@id/textview_add_data_statusrumah"-->
-            <!--                android:background="@drawable/custom_edittext"-->
-            <!--                android:hint="eg:289831287631873"-->
-            <!--                android:textSize="12sp"-->
-            <!--                />-->
+<!--            &lt;!&ndash;            <androidx.appcompat.widget.AppCompatEditText&ndash;&gt;-->
+<!--            &lt;!&ndash;                android:id="@+id/edittext_add_data_statusrumah"&ndash;&gt;-->
+<!--            &lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;-->
+<!--            &lt;!&ndash;                android:layout_height="52dp"&ndash;&gt;-->
+<!--            &lt;!&ndash;                android:layout_marginTop="8dp"&ndash;&gt;-->
+<!--            &lt;!&ndash;               &ndash;&gt;-->
+<!--            &lt;!&ndash;                app:layout_constraintTop_toBottomOf="@id/textview_add_data_statusrumah"&ndash;&gt;-->
+<!--            &lt;!&ndash;                android:background="@drawable/custom_edittext"&ndash;&gt;-->
+<!--            &lt;!&ndash;                android:hint="eg:289831287631873"&ndash;&gt;-->
+<!--            &lt;!&ndash;                android:textSize="12sp"&ndash;&gt;-->
+<!--            &lt;!&ndash;                />&ndash;&gt;-->
 
-            <Spinner
-                android:id="@+id/spinner_add_data_statusrumah"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintEnd_toEndOf="@id/constraint_add_data"
-                app:layout_constraintStart_toStartOf="@id/constraint_add_data"
-                app:layout_constraintTop_toBottomOf="@id/textview_add_data_statusrumah"
+<!--            <Spinner-->
+<!--                android:id="@+id/spinner_add_data_statusrumah"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="52dp"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                app:layout_constraintEnd_toEndOf="@id/constraint_add_data"-->
+<!--                app:layout_constraintStart_toStartOf="@id/constraint_add_data"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/textview_add_data_statusrumah"-->
 
-                />
-            <!-- Status Tanah Garapan -->
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/textview_add_data_statustanahgarapan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Status Tanah Garapan"
-                android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="@id/constraint_add_data"
-                app:layout_constraintTop_toBottomOf="@id/spinner_add_data_statusrumah" />
+<!--                />-->
+<!--            &lt;!&ndash; Status Tanah Garapan &ndash;&gt;-->
+<!--            <androidx.appcompat.widget.AppCompatTextView-->
+<!--                android:id="@+id/textview_add_data_statustanahgarapan"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:text="Status Tanah Garapan"-->
+<!--                android:textSize="12sp"-->
+<!--                app:layout_constraintStart_toStartOf="@id/constraint_add_data"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/spinner_add_data_statusrumah" />-->
 
-            <Spinner
-                android:id="@+id/spinner_add_data_statustanahgarapan"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintEnd_toEndOf="@id/constraint_add_data"
-                app:layout_constraintStart_toStartOf="@id/constraint_add_data"
-                app:layout_constraintTop_toBottomOf="@id/textview_add_data_statustanahgarapan"
+<!--            <Spinner-->
+<!--                android:id="@+id/spinner_add_data_statustanahgarapan"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="52dp"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                app:layout_constraintEnd_toEndOf="@id/constraint_add_data"-->
+<!--                app:layout_constraintStart_toStartOf="@id/constraint_add_data"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/textview_add_data_statustanahgarapan"-->
 
-                />
+<!--                />-->
 
-            <!-- Jumlah Tanah Garapan -->
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/textview_add_data_jumlahtanahgarapan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Jumlah Tanah Garapan"
-                android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="@id/constraint_add_data"
-                app:layout_constraintTop_toBottomOf="@id/spinner_add_data_statustanahgarapan" />
+<!--            &lt;!&ndash; Jumlah Tanah Garapan &ndash;&gt;-->
+<!--            <androidx.appcompat.widget.AppCompatTextView-->
+<!--                android:id="@+id/textview_add_data_jumlahtanahgarapan"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:text="Jumlah Tanah Garapan"-->
+<!--                android:textSize="12sp"-->
+<!--                app:layout_constraintStart_toStartOf="@id/constraint_add_data"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/spinner_add_data_statustanahgarapan" />-->
 
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/edittext_add_data_jumlahtanahgarapan"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/custom_edittext"
-                android:hint="0"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="@id/constraint_add_data"
-                app:layout_constraintStart_toStartOf="@id/constraint_add_data"
-                app:layout_constraintTop_toBottomOf="@id/textview_add_data_jumlahtanahgarapan" />
+<!--            <androidx.appcompat.widget.AppCompatEditText-->
+<!--                android:id="@+id/edittext_add_data_jumlahtanahgarapan"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="52dp"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:background="@drawable/custom_edittext"-->
+<!--                android:hint="0"-->
+<!--                android:textSize="12sp"-->
+<!--                app:layout_constraintEnd_toEndOf="@id/constraint_add_data"-->
+<!--                app:layout_constraintStart_toStartOf="@id/constraint_add_data"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/textview_add_data_jumlahtanahgarapan" />-->
 
-            <!-- Luas Tanah Garapan -->
+<!--            &lt;!&ndash; Luas Tanah Garapan &ndash;&gt;-->
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/textview_add_data_luastanahgarapan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Luas Tanah Garapan"
-                android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="@id/constraint_add_data"
-                app:layout_constraintTop_toBottomOf="@id/edittext_add_data_jumlahtanahgarapan" />
+<!--            <androidx.appcompat.widget.AppCompatTextView-->
+<!--                android:id="@+id/textview_add_data_luastanahgarapan"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:text="Luas Tanah Garapan"-->
+<!--                android:textSize="12sp"-->
+<!--                app:layout_constraintStart_toStartOf="@id/constraint_add_data"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/edittext_add_data_jumlahtanahgarapan" />-->
 
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/edittext_add_data_luastanahgarapan"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/custom_edittext"
-                android:hint="0"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="@id/constraint_add_data"
-                app:layout_constraintStart_toStartOf="@id/constraint_add_data"
-                app:layout_constraintTop_toBottomOf="@id/textview_add_data_luastanahgarapan" />
+<!--            <androidx.appcompat.widget.AppCompatEditText-->
+<!--                android:id="@+id/edittext_add_data_luastanahgarapan"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="52dp"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:background="@drawable/custom_edittext"-->
+<!--                android:hint="0"-->
+<!--                android:textSize="12sp"-->
+<!--                app:layout_constraintEnd_toEndOf="@id/constraint_add_data"-->
+<!--                app:layout_constraintStart_toStartOf="@id/constraint_add_data"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/textview_add_data_luastanahgarapan" />-->
 
-            <!-- Status Kemiskinan -->
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/textview_add_data_statuskemiskinan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Status Kemiskinan"
-                android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="@id/constraint_add_data"
-                app:layout_constraintTop_toBottomOf="@id/edittext_add_data_luastanahgarapan" />
+<!--            &lt;!&ndash; Status Kemiskinan &ndash;&gt;-->
+<!--            <androidx.appcompat.widget.AppCompatTextView-->
+<!--                android:id="@+id/textview_add_data_statuskemiskinan"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:text="Status Kemiskinan"-->
+<!--                android:textSize="12sp"-->
+<!--                app:layout_constraintStart_toStartOf="@id/constraint_add_data"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/edittext_add_data_luastanahgarapan" />-->
 
-            <RadioGroup
-                android:id="@+id/radiogroup_add_data_statuskemiskinan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/textview_add_data_statuskemiskinan"
-                app:layout_constraintStart_toStartOf="@id/constraint_add_data"
-                app:layout_constraintEnd_toEndOf="@id/constraint_add_data"
-                android:orientation="horizontal"
-                >
+<!--            <RadioGroup-->
+<!--                android:id="@+id/radiogroup_add_data_statuskemiskinan"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/textview_add_data_statuskemiskinan"-->
+<!--                app:layout_constraintStart_toStartOf="@id/constraint_add_data"-->
+<!--                app:layout_constraintEnd_toEndOf="@id/constraint_add_data"-->
+<!--                android:orientation="horizontal"-->
+<!--                >-->
 
-                <RadioButton
-                    android:id="@+id/radiobutton_add_data_statuskemiskinan_ya"
-                    android:layout_width="128dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Ya"
-                    android:background="@drawable/custom_edittext"
-                    android:buttonTint="@color/colorPrimary"
-                    />
+<!--                <RadioButton-->
+<!--                    android:id="@+id/radiobutton_add_data_statuskemiskinan_ya"-->
+<!--                    android:layout_width="128dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="8dp"-->
+<!--                    android:text="Ya"-->
+<!--                    android:background="@drawable/custom_edittext"-->
+<!--                    android:buttonTint="@color/colorPrimary"-->
+<!--                    />-->
 
-                <RadioButton
-                    android:id="@+id/radiobutton_add_data_statuskemiskinan_tidak"
-                    android:layout_width="128dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginLeft="@dimen/margin_20dp"
-                    android:text="Tidak"
-                    android:background="@drawable/custom_edittext"
-                    android:buttonTint="@color/colorPrimary"
-                    />
+<!--                <RadioButton-->
+<!--                    android:id="@+id/radiobutton_add_data_statuskemiskinan_tidak"-->
+<!--                    android:layout_width="128dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="8dp"-->
+<!--                    android:layout_marginLeft="@dimen/margin_20dp"-->
+<!--                    android:text="Tidak"-->
+<!--                    android:background="@drawable/custom_edittext"-->
+<!--                    android:buttonTint="@color/colorPrimary"-->
+<!--                    />-->
 
-            </RadioGroup>
-
-
-
-            <!-- Jenis Fasilitas Air Bersih -->
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/textview_add_data_jenisfasilitasair"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Status Tanah Garapan"
-                android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="@id/constraint_add_data"
-                app:layout_constraintTop_toBottomOf="@id/radiogroup_add_data_statuskemiskinan" />
-
-            <Spinner
-                android:id="@+id/spinner_add_data_jenisfasilitasair"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintEnd_toEndOf="@id/constraint_add_data"
-                app:layout_constraintStart_toStartOf="@id/constraint_add_data"
-                app:layout_constraintTop_toBottomOf="@id/textview_add_data_jenisfasilitasair"
-
-                />
+<!--            </RadioGroup>-->
 
 
-            <!-- Jenis Sanitasi -->
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/textview_add_data_jenissanitasi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Status Tanah Garapan"
-                android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="@id/constraint_add_data"
-                app:layout_constraintTop_toBottomOf="@id/spinner_add_data_jenisfasilitasair" />
 
-            <Spinner
-                android:id="@+id/spinner_add_data_jenissanitasi"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintEnd_toEndOf="@id/constraint_add_data"
-                app:layout_constraintStart_toStartOf="@id/constraint_add_data"
-                app:layout_constraintTop_toBottomOf="@id/textview_add_data_jenissanitasi"
+<!--            &lt;!&ndash; Jenis Fasilitas Air Bersih &ndash;&gt;-->
+<!--            <androidx.appcompat.widget.AppCompatTextView-->
+<!--                android:id="@+id/textview_add_data_jenisfasilitasair"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:text="Status Tanah Garapan"-->
+<!--                android:textSize="12sp"-->
+<!--                app:layout_constraintStart_toStartOf="@id/constraint_add_data"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/radiogroup_add_data_statuskemiskinan" />-->
 
-                />
+<!--            <Spinner-->
+<!--                android:id="@+id/spinner_add_data_jenisfasilitasair"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="52dp"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                app:layout_constraintEnd_toEndOf="@id/constraint_add_data"-->
+<!--                app:layout_constraintStart_toStartOf="@id/constraint_add_data"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/textview_add_data_jenisfasilitasair"-->
 
-
-            <!-- Konsumsi Air Minum -->
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/textview_add_data_konsumsiairminum"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Status Tanah Garapan"
-                android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="@id/constraint_add_data"
-                app:layout_constraintTop_toBottomOf="@id/spinner_add_data_jenissanitasi" />
-
-            <Spinner
-                android:id="@+id/spinner_add_data_konsumsiairminum"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintEnd_toEndOf="@id/constraint_add_data"
-                app:layout_constraintStart_toStartOf="@id/constraint_add_data"
-                app:layout_constraintTop_toBottomOf="@id/textview_add_data_konsumsiairminum"
-
-                />
+<!--                />-->
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+<!--            &lt;!&ndash; Jenis Sanitasi &ndash;&gt;-->
+<!--            <androidx.appcompat.widget.AppCompatTextView-->
+<!--                android:id="@+id/textview_add_data_jenissanitasi"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:text="Status Tanah Garapan"-->
+<!--                android:textSize="12sp"-->
+<!--                app:layout_constraintStart_toStartOf="@id/constraint_add_data"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/spinner_add_data_jenisfasilitasair" />-->
 
-    </ScrollView>
+<!--            <Spinner-->
+<!--                android:id="@+id/spinner_add_data_jenissanitasi"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="52dp"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                app:layout_constraintEnd_toEndOf="@id/constraint_add_data"-->
+<!--                app:layout_constraintStart_toStartOf="@id/constraint_add_data"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/textview_add_data_jenissanitasi"-->
 
-    <Button
-        android:id="@+id/button_add_data_simpan"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:text="Simpan"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:background="@color/colorPrimary"
-        />
+<!--                />-->
+
+
+<!--            &lt;!&ndash; Konsumsi Air Minum &ndash;&gt;-->
+
+<!--            <androidx.appcompat.widget.AppCompatTextView-->
+<!--                android:id="@+id/textview_add_data_konsumsiairminum"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:text="Status Tanah Garapan"-->
+<!--                android:textSize="12sp"-->
+<!--                app:layout_constraintStart_toStartOf="@id/constraint_add_data"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/spinner_add_data_jenissanitasi" />-->
+
+<!--            <Spinner-->
+<!--                android:id="@+id/spinner_add_data_konsumsiairminum"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="52dp"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                app:layout_constraintEnd_toEndOf="@id/constraint_add_data"-->
+<!--                app:layout_constraintStart_toStartOf="@id/constraint_add_data"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/textview_add_data_konsumsiairminum"-->
+
+<!--                />-->
+
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--    </ScrollView>-->
+
+
+  <FrameLayout
+      android:id="@+id/framelayout_fragment_add_data"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      app:layout_constraintTop_toBottomOf="@id/toolbar_add_data"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintBottom_toBottomOf="parent"
+      />
+
+<!--    <Button-->
+<!--        android:id="@+id/button_add_data_simpan"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="52dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        android:text="Simpan"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textStyle="bold"-->
+<!--        android:background="@color/colorPrimary"-->
+<!--        />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

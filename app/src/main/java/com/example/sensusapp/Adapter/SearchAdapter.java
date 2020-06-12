@@ -1,6 +1,7 @@
 package com.example.sensusapp.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.sensusapp.DetailActivity;
 import com.example.sensusapp.Model.KartuKeluarga;
 import com.example.sensusapp.R;
 
@@ -40,6 +42,15 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
 
         holder.txtnokk.setText(nokk);
         holder.txtnama.setText(nama);
+
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(holder.cardView.getContext(), DetailActivity.class);
+                intent.putExtra("no_kk", nokk);
+                holder.cardView.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override

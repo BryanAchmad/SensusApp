@@ -1,11 +1,14 @@
 package com.example.sensusapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -13,6 +16,7 @@ import android.widget.Toast;
 import com.example.sensusapp.Api.APIservice;
 import com.example.sensusapp.Api.APIurl;
 import com.example.sensusapp.Api.Result;
+import com.example.sensusapp.Fragment.FragmentAddKartuKeluarga;
 import com.example.sensusapp.Model.Master.Status;
 
 import java.util.ArrayList;
@@ -27,24 +31,32 @@ public class AddDataActivity extends AppCompatActivity {
     private ImageView imageViewbtnback;
     private Spinner spinnerStatusRumah;
     private Context context;
+    private FrameLayout frameLayout;
+    private FragmentManager fragmentManager;
+    private FragmentTransaction fragmentTransaction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_data);
 
+        fragmentManager = getSupportFragmentManager();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.framelayout_fragment_add_data, new FragmentAddKartuKeluarga()).commit();
         imageViewbtnback = (ImageView) findViewById(R.id.backbutton_add_data);
-        spinnerStatusRumah = (Spinner) findViewById(R.id.spinner_add_data_statusrumah);
+//        spinnerStatusRumah = (Spinner) findViewById(R.id.spinner_add_data_statusrumah);
 
 
         imageViewbtnback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+              onBackPressed();
             }
         });
 
-        parseJSON();
+
+
+
     }
 
     void parseJSON() {
