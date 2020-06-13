@@ -31,8 +31,6 @@ public class FragmentAddKartuKeluarga extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.add_data_kartu_keluarga_fragment, container, false);
 
-
-
         buttonNext = view.findViewById(R.id.button_next_add_data);
 
         buttonNext.setOnClickListener(new View.OnClickListener() {
