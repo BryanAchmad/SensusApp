@@ -3,9 +3,11 @@ package com.example.sensusapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,6 +30,7 @@ public class DetailActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private ImageView imageViewBackButton;
+    private ImageButton imageButtonEdit;
     private TextView txtNoKK;
     private ViewPagerAdapter adapter;
 
@@ -36,10 +39,14 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
+
         tabLayout = findViewById(R.id.tabLayout_detail);
         viewPager = findViewById(R.id.viewPager_detail);
         imageViewBackButton = findViewById(R.id.button_back_detail);
         txtNoKK = findViewById(R.id.txt_no_kartu_keluarga);
+        imageButtonEdit = findViewById(R.id.button_edit_detail_kartu_keluarga);
+
+
 
         imageViewBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +77,17 @@ public class DetailActivity extends AppCompatActivity {
                 if (response.body() != null && response.body().isSuccessfull()) {
 
                     txtNoKK.setText(response.body().getData().getNo_kk());
+                    String id = String.valueOf(response.body().getData().getId());
+
+                    imageButtonEdit.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(DetailActivity.this, UpdateDataActivity.class);
+                            intent.putExtra("id", id);
+                            startActivity(intent);
+                        }
+                    });
+
                     Log.d("sanitasi", response.body().getData().getJenis_sanitasi().getJenis());
 
                     FragmentInformasi activeFragment = (FragmentInformasi) adapter.getItem(0);

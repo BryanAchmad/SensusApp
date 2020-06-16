@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateDataActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_update_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/colorPrimaryLight"
+        android:minHeight="?attr/actionBarSize"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/button_back_update_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:src="@drawable/ic_arrow_back_black_24dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_toolbar_update_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Kartu Keluarga"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            />
+    </androidx.appcompat.widget.Toolbar>
+
+<!--    <View-->
+<!--        android:id="@+id/view_update_data"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="80dp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/toolbar_update_data"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:background="@color/colorPrimary"-->
+<!--        />-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_update_data_nik"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_update_data"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/colorPrimaryLight"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_update_data_title_nik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/constraint_update_data_nik"
+            app:layout_constraintTop_toTopOf="@id/constraint_update_data_nik"
+            android:layout_marginHorizontal="20dp"
+            android:text="@string/detail_no_kartu_keluarga"
+            android:textSize="10sp"
+            android:textStyle="normal"
+            android:textColor="#ffffff"
+            tools:ignore="SmallSp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_update_data_value_nik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/textview_update_data_title_nik"
+            app:layout_constraintStart_toStartOf="@id/constraint_update_data_nik"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="4dp"
+            android:textSize="16sp"
+            android:text="7139827301827"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/constraint_update_data_nik"
+        app:layout_constraintBottom_toTopOf="@+id/button_save_update_data">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_update_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <!-- Nama -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_update_data_nama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/constraint_update_data"
+                app:layout_constraintTop_toTopOf="@id/constraint_update_data" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edittext_update_data_nama"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/custom_edittext"
+                android:hint="Johndoe"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@id/constraint_update_data"
+                app:layout_constraintStart_toStartOf="@id/constraint_update_data"
+                app:layout_constraintTop_toBottomOf="@id/textview_update_data_nama" />
+
+            <!-- Alamat -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_update_data_alamat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Alamat"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/constraint_update_data"
+                app:layout_constraintTop_toBottomOf="@id/edittext_update_data_nama" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edittext_update_data_alamat"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/custom_edittext"
+                android:hint="0"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@id/constraint_update_data"
+                app:layout_constraintStart_toStartOf="@id/constraint_update_data"
+                app:layout_constraintTop_toBottomOf="@id/textview_update_data_alamat" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_update_data_dusunrtrw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="@id/constraint_update_data"
+                app:layout_constraintStart_toStartOf="@id/constraint_update_data"
+                app:layout_constraintTop_toBottomOf="@id/edittext_update_data_alamat">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_update_data_dusunrtrw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="186dp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraint_update_data_dusun"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/margin_8dp"
+                    app:layout_constraintStart_toStartOf="@id/constraint_update_data_dusunrtrw"
+                    app:layout_constraintTop_toTopOf="@id/constraint_update_data_dusunrtrw"
+                    app:layout_constraintBottom_toBottomOf="@id/constraint_update_data_dusunrtrw"
+                    app:layout_constraintEnd_toStartOf="@id/guideline_update_data_dusunrtrw"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textview_update_data_dusun"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="@id/constraint_update_data_dusun"
+                        app:layout_constraintTop_toTopOf="@id/constraint_update_data_dusun"
+                        android:text="Dusun"
+                        android:textSize="12sp" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edittext_update_data_dusun"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        app:layout_constraintStart_toStartOf="@id/constraint_update_data_dusun"
+                        app:layout_constraintEnd_toEndOf="@id/constraint_update_data_dusun"
+                        app:layout_constraintTop_toBottomOf="@id/textview_update_data_dusun"
+                        app:layout_constraintBottom_toBottomOf="@id/constraint_update_data_dusun"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/custom_edittext"
+                        android:hint="Gudo"
+                        android:textSize="12sp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraint_update_data_rtrw"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintTop_toTopOf="@id/constraint_update_data_dusunrtrw"
+                    app:layout_constraintStart_toEndOf="@id/guideline_update_data_dusunrtrw"
+                    app:layout_constraintBottom_toBottomOf="@id/constraint_update_data_dusunrtrw"
+                    app:layout_constraintEnd_toEndOf="@id/constraint_update_data_dusunrtrw"
+                    android:layout_marginStart="8dp">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline_update_data_rtrw"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.50151056"/>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraint_update_data_rt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        app:layout_constraintStart_toStartOf="@id/constraint_update_data_rtrw"
+                        app:layout_constraintTop_toTopOf="@id/constraint_update_data_rtrw"
+                        app:layout_constraintBottom_toBottomOf="@id/constraint_update_data_rtrw"
+                        app:layout_constraintEnd_toStartOf="@id/guideline_update_data_rtrw">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/textview_update_data_rt"                         android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="@id/constraint_update_data_rt"
+                            app:layout_constraintTop_toTopOf="@id/constraint_update_data_rt"
+                            android:text="RT"
+                            android:textSize="12sp" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/edittext_update_data_rt"
+                            android:layout_width="0dp"
+                            android:layout_height="52dp"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintTop_toBottomOf="@id/textview_update_data_rt"
+                            app:layout_constraintStart_toStartOf="@id/constraint_update_data_rt"
+                            app:layout_constraintEnd_toEndOf="@id/constraint_update_data_rt"
+                            app:layout_constraintBottom_toBottomOf="@id/constraint_update_data_rt"
+                            android:background="@drawable/custom_edittext"
+                            android:hint="08"
+                            android:textSize="12sp" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraint_update_data_rw"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintStart_toEndOf="@id/guideline_update_data_rtrw"
+                        app:layout_constraintTop_toTopOf="@id/constraint_update_data_rtrw"
+                        app:layout_constraintBottom_toBottomOf="@id/constraint_update_data_rtrw"
+                        app:layout_constraintEnd_toEndOf="@id/constraint_update_data_rtrw"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/textview_update_data_rw"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="@id/constraint_update_data_rw"
+                            app:layout_constraintTop_toTopOf="@id/constraint_update_data_rw"
+                            android:text="RW"
+                            android:textSize="12sp" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/edittext_update_data_rw"
+                            android:layout_width="0dp"
+                            android:layout_height="52dp"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintStart_toStartOf="@id/constraint_update_data_rw"
+                            app:layout_constraintEnd_toEndOf="@id/constraint_update_data_rw"
+                            app:layout_constraintTop_toBottomOf="@id/textview_update_data_rw"
+                            app:layout_constraintBottom_toBottomOf="@id/constraint_update_data_rw"
+                            android:background="@drawable/custom_edittext"
+                            android:hint="10"
+                            android:textSize="12sp" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- RT -->
+
+            <!-- Desa -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_update_data_desa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Desa"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/constraint_update_data"
+                app:layout_constraintTop_toBottomOf="@id/constraint_update_data_dusunrtrw" />
+
+            <Spinner
+                android:id="@+id/spinner_update_data_desa"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="@id/constraint_update_data"
+                app:layout_constraintStart_toStartOf="@id/constraint_update_data"
+                app:layout_constraintTop_toBottomOf="@id/textview_update_data_desa"
+
+                />
+
+            <!-- Status Rumah -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_update_data_statusrumah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Status Rumah"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/constraint_update_data"
+                app:layout_constraintTop_toBottomOf="@id/spinner_update_data_desa" />
+
+            <Spinner
+                android:id="@+id/spinner_update_data_statusrumah"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="@id/constraint_update_data"
+                app:layout_constraintStart_toStartOf="@id/constraint_update_data"
+                app:layout_constraintTop_toBottomOf="@id/textview_update_data_statusrumah"
+
+                />
+            <!-- Status Tanah Garapan -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_update_data_statustanahgarapan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Status Tanah Garapan"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/constraint_update_data"
+                app:layout_constraintTop_toBottomOf="@id/spinner_update_data_statusrumah" />
+
+            <Spinner
+                android:id="@+id/spinner_update_data_statustanahgarapan"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="@id/constraint_update_data"
+                app:layout_constraintStart_toStartOf="@id/constraint_update_data"
+                app:layout_constraintTop_toBottomOf="@id/textview_update_data_statustanahgarapan"
+
+                />
+
+            <!-- Jumlah Tanah Garapan -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_update_data_jumlahtanahgarapan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Jumlah Tanah Garapan"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/constraint_update_data"
+                app:layout_constraintTop_toBottomOf="@id/spinner_update_data_statustanahgarapan" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edittext_update_data_jumlahtanahgarapan"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/custom_edittext"
+                android:hint="0"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@id/constraint_update_data"
+                app:layout_constraintStart_toStartOf="@id/constraint_update_data"
+                app:layout_constraintTop_toBottomOf="@id/textview_update_data_jumlahtanahgarapan" />
+
+            <!-- Luas Tanah Garapan -->
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_update_data_luastanahgarapan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Luas Tanah Garapan"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/constraint_update_data"
+                app:layout_constraintTop_toBottomOf="@id/edittext_update_data_jumlahtanahgarapan" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edittext_update_data_luastanahgarapan"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/custom_edittext"
+                android:hint="0"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@id/constraint_update_data"
+                app:layout_constraintStart_toStartOf="@id/constraint_update_data"
+                app:layout_constraintTop_toBottomOf="@id/textview_update_data_luastanahgarapan" />
+
+            <!-- Status Kemiskinan -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_update_data_statuskemiskinan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Status Kemiskinan"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/constraint_update_data"
+                app:layout_constraintTop_toBottomOf="@id/edittext_update_data_luastanahgarapan" />
+
+            <RadioGroup
+                android:id="@+id/radiogroup_update_data_statuskemiskinan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/textview_update_data_statuskemiskinan"
+                app:layout_constraintStart_toStartOf="@id/constraint_update_data"
+                app:layout_constraintEnd_toEndOf="@id/constraint_update_data"
+                android:orientation="horizontal"
+                >
+
+                <RadioButton
+                    android:id="@+id/radiobutton_update_data_statuskemiskinan_ya"
+                    android:layout_width="128dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:checked="true"
+                    android:text="Ya"
+                    android:background="@drawable/custom_edittext"
+                    android:buttonTint="@color/colorPrimary"
+                    />
+
+                <RadioButton
+                    android:id="@+id/radiobutton_update_data_statuskemiskinan_tidak"
+                    android:layout_width="128dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="@dimen/margin_20dp"
+                    android:text="Tidak"
+                    android:background="@drawable/custom_edittext"
+                    android:buttonTint="@color/colorPrimary"
+                    />
+            </RadioGroup>
+
+            <!-- Jenis Fasilitas Air Bersih -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_update_data_jenisfasilitasair"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Jenis Fasilitas Air Bersih"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/constraint_update_data"
+                app:layout_constraintTop_toBottomOf="@id/radiogroup_update_data_statuskemiskinan" />
+
+            <Spinner
+                android:id="@+id/spinner_update_data_jenisfasilitasair"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="@id/constraint_update_data"
+                app:layout_constraintStart_toStartOf="@id/constraint_update_data"
+                app:layout_constraintTop_toBottomOf="@id/textview_update_data_jenisfasilitasair"
+
+                />
+
+
+            <!-- Jenis Sanitasi -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_update_data_jenissanitasi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Status Tanah Garapan"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/constraint_update_data"
+                app:layout_constraintTop_toBottomOf="@id/spinner_update_data_jenisfasilitasair" />
+
+            <Spinner
+                android:id="@+id/spinner_update_data_jenissanitasi"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="@id/constraint_update_data"
+                app:layout_constraintStart_toStartOf="@id/constraint_update_data"
+                app:layout_constraintTop_toBottomOf="@id/textview_update_data_jenissanitasi"
+
+                />
+
+
+            <!-- Konsumsi Air Minum -->
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_update_data_konsumsiairminum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Status Tanah Garapan"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/constraint_update_data"
+                app:layout_constraintTop_toBottomOf="@id/spinner_update_data_jenissanitasi" />
+
+            <Spinner
+                android:id="@+id/spinner_update_data_konsumsiairminum"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="@id/constraint_update_data"
+                app:layout_constraintStart_toStartOf="@id/constraint_update_data"
+                app:layout_constraintTop_toBottomOf="@id/textview_update_data_konsumsiairminum"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/button_save_update_data"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:text="Simpan"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/touch_effect_button_tambah"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

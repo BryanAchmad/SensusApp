@@ -13,7 +13,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorPrimaryLight"
         android:minHeight="?attr/actionBarSize"
         >
 
@@ -35,24 +35,17 @@
             android:textSize="16sp"
             />
     </androidx.appcompat.widget.Toolbar>
-    
-    <View
-        android:id="@+id/view_detail"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_detail"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:background="@color/colorPrimary"
-        />
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_detail_kk"
         android:layout_width="0dp"
-        android:layout_height="80dp"
-        app:layout_constraintStart_toStartOf="@id/view_detail"
-        app:layout_constraintTop_toTopOf="@id/view_detail"
-        app:layout_constraintEnd_toEndOf="@id/view_detail"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/colorPrimaryLight"
         >
 
 
@@ -62,7 +55,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="@id/constraint_detail_kk"
             app:layout_constraintTop_toTopOf="@id/constraint_detail_kk"
-            android:layout_marginHorizontal="20dp"
+
             android:text="@string/detail_no_kartu_keluarga"
             android:textSize="10sp"
             android:textStyle="normal"
@@ -75,12 +68,22 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/txt_title_no_kartu_keluarga"
             app:layout_constraintStart_toStartOf="@id/constraint_detail_kk"
-            android:layout_marginHorizontal="20dp"
             android:layout_marginTop="4dp"
-
+            android:text="2634612341234234"
             android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="#ffffff"
+            />
+        
+        <ImageButton
+            android:id="@+id/button_edit_detail_kartu_keluarga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="@id/constraint_detail_kk"
+            app:layout_constraintTop_toTopOf="@id/constraint_detail_kk"
+            android:src="@drawable/ic_baseline_edit_24"
+            android:background="false"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -101,7 +104,7 @@
             app:tabMode="fixed"
             app:tabTextColor="#ffffff"
             app:tabIndicatorColor="#ffffff"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorPrimaryLight"
             />
 
 
