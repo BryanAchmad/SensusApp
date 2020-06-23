@@ -1,33 +1,36 @@
 package com.example.sensusapp.Adapter;
 
-import android.content.Context;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.sensusapp.Model.AnggotaKeluarga;
 import com.example.sensusapp.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class AddAnggotaKeluargaAdapter extends RecyclerView.Adapter<AddAnggotaKeluargaAdapter.ViewHolder> {
 
-    private ArrayList<AnggotaKeluarga> anggotaKeluargas = new ArrayList<>();
-    private Context context;
+    private ArrayList<String> strings;
 
-    public AddAnggotaKeluargaAdapter(ArrayList<AnggotaKeluarga> anggotaKeluargas, Context context) {
-        this.anggotaKeluargas = anggotaKeluargas;
-        this.context = context;
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull List<Object> payloads) {
+        super.onBindViewHolder(holder, position, payloads);
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return super.getItemViewType(position);
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_add_anggota_keluarga, parent, false);
-        return new ViewHolder(view);
+        return null;
     }
 
     @Override
@@ -41,8 +44,11 @@ public class AddAnggotaKeluargaAdapter extends RecyclerView.Adapter<AddAnggotaKe
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+
         }
     }
+
 }

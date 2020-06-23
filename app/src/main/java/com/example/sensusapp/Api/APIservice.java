@@ -1,7 +1,16 @@
 package com.example.sensusapp.Api;
 
+import android.service.autofill.Sanitizer;
+
 import com.example.sensusapp.LoginResponse;
 import com.example.sensusapp.Model.KartuKeluarga;
+import com.example.sensusapp.Model.Master.Disabilitas;
+import com.example.sensusapp.Model.Master.JenisFasilitasAirBersih;
+import com.example.sensusapp.Model.Master.JenisSanitasi;
+import com.example.sensusapp.Model.Master.KonsumsiAirMinum;
+import com.example.sensusapp.Model.Master.Pekerjaan;
+import com.example.sensusapp.Model.Master.Pendidikan;
+import com.example.sensusapp.Model.Master.Relasi;
 import com.example.sensusapp.Model.Master.Status;
 import com.example.sensusapp.Model.User;
 
@@ -30,6 +39,29 @@ public interface APIservice {
 
     @GET("master/status")
     Call<Result<List<Status>>> status();
+
+    @GET("master/disabilitas")
+    Call<Result<List<Disabilitas>>> disabilitas();
+
+    @GET("master/fasilitas_air_bersih")
+    Call<Result<List<JenisFasilitasAirBersih>>> fasilitasair();
+
+    @GET("master/konsumsi_air_bersih")
+    Call<Result<List<KonsumsiAirMinum>>> konsumsi();
+
+    @GET("master/pekerjaan")
+    Call<Result<List<Pekerjaan>>> pekerjaan();
+
+    @GET("master/pendidikan")
+    Call<Result<List<Pendidikan>>> pendidikan();
+
+    @GET("master/relasi")
+    Call<Result<List<Relasi>>> relasi();
+
+    @GET("master/sanitasi")
+    Call<Result<List<JenisSanitasi>>> sanitasi();
+
+
 
     @GET("sensus?")
     Call<Result<KartuKeluarga>> getDetailSensus(

@@ -1,17 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview_detail_keluarga"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/margin_20dp"
-        />
+         <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_add_detail_anggota_keluarga"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+          />
 
-    
+<!--        <com.alespero.expandablecardview.ExpandableCardView-->
+<!--            android:id="@+id/expandable_cardview_add_keluarga_layout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:inner_view="@layout/add_anggota_keluarga_layout"-->
+<!--            app:expandOnClick="true"-->
+<!--            app:animationDuration="300"-->
+<!--            app:startExpanded="false"/>-->
+<!--  //  </androidx.recyclerview.widget.RecyclerView>-->
 
 
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -83,7 +83,7 @@
             app:layout_constraintEnd_toEndOf="@id/constraint_detail_kk"
             app:layout_constraintTop_toTopOf="@id/constraint_detail_kk"
             android:src="@drawable/ic_baseline_edit_24"
-            android:background="false"
+            android:background="@null"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

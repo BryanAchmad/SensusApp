@@ -1,32 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    card_view:cardCornerRadius="4dp"
-    card_view:cardElevation="0dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginBottom="2dp"
     android:id="@+id/cardview_add_anggota_keluarga">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraint_add_anggota_keluarga"
+    <com.alespero.expandablecardview.ExpandableCardView
+        android:id="@+id/expandable_cardview_add_keluarga_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="20dp"
-        android:paddingVertical="20dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:inner_view="@layout/add_anggota_keluarga_layout"
+        app:expandOnClick="true"
+        app:animationDuration="300"
+        app:startExpanded="false"
+        />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="asdasdasd"
-            card_view:layout_constraintTop_toTopOf="@id/constraint_add_anggota_keluarga"
-            card_view:layout_constraintBottom_toBottomOf="@id/constraint_add_anggota_keluarga"
-            card_view:layout_constraintStart_toStartOf="@id/constraint_add_anggota_keluarga"
-            card_view:layout_constraintEnd_toEndOf="@id/constraint_add_anggota_keluarga"/>
+    <!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/constraint_add_anggota_keluarga"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:paddingHorizontal="20dp"-->
+<!--        android:paddingVertical="20dp">-->
+
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="asdasdasd"-->
+<!--            card_view:layout_constraintTop_toTopOf="@id/constraint_add_anggota_keluarga"-->
+<!--            card_view:layout_constraintBottom_toBottomOf="@id/constraint_add_anggota_keluarga"-->
+<!--            card_view:layout_constraintStart_toStartOf="@id/constraint_add_anggota_keluarga"-->
+<!--            card_view:layout_constraintEnd_toEndOf="@id/constraint_add_anggota_keluarga"/>-->
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
 
-</androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--<androidx.cardview.widget.CardView-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    xmlns:card_view="http://schemas.android.com/apk/res-auto"-->
+<!--    card_view:cardCornerRadius="4dp"-->
+<!--    card_view:cardElevation="0dp"-->
+<!--    android:layout_marginBottom="2dp"-->
+<!--    android:id="@+id/cardview_add_anggota_keluarga">-->
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:id="@+id/constraint_add_anggota_keluarga"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:paddingHorizontal="20dp"-->
+<!--            android:paddingVertical="20dp"-->
+<!--            >-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/textview_cardview_add_anggota_keluarga_nik"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="asdasdasd"-->
+<!--                card_view:layout_constraintTop_toTopOf="@id/constraint_add_anggota_keluarga"-->
+<!--                card_view:layout_constraintBottom_toBottomOf="@id/constraint_add_anggota_keluarga"-->
+<!--                card_view:layout_constraintStart_toStartOf="@id/constraint_add_anggota_keluarga"-->
+<!--                card_view:layout_constraintEnd_toEndOf="@id/constraint_add_anggota_keluarga"-->
+<!--                />-->
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--    </androidx.cardview.widget.CardView>-->
