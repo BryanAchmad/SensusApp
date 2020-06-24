@@ -90,8 +90,7 @@
             android:layout_width="128dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginLeft="@dimen/margin_20dp"
-            android:checked="true"
+            android:layout_marginStart="20dp"
             android:text="Perempuan"
             android:background="@drawable/custom_edittext_expand"
             android:buttonTint="@color/colorPrimary"/>
@@ -151,20 +150,409 @@
 
 
     <!-- golongan darah -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/expand_textview_add_data_key_goldar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Golongan Darah"
+        android:textSize="12sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expand_edittext_add_data_value_tanggallahir"
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/expand_edittext_add_data_value_goldar"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        app:layout_constraintTop_toBottomOf="@id/expand_textview_add_data_key_goldar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="4dp"
+        android:hint="O"
+        android:textCursorDrawable="@null"
+        android:background="@drawable/custom_edittext_expand"/>
 
     <!-- agama -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/expand_textview_add_data_key_agama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agama"
+        android:textSize="12sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expand_edittext_add_data_value_goldar"
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/expand_edittext_add_data_value_agama"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        app:layout_constraintTop_toBottomOf="@id/expand_textview_add_data_key_agama"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="4dp"
+        android:hint="Agama"
+        android:textCursorDrawable="@null"
+        android:background="@drawable/custom_edittext_expand"/>
+
     <!-- status -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/expand_textview_add_data_key_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status"
+        android:textSize="12sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expand_edittext_add_data_value_agama"
+        />
+
+    <Spinner
+        android:id="@+id/expand_spinner_add_data_value_status"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expand_textview_add_data_key_status"
+        />
+
     <!-- relasi -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/expand_textview_add_data_key_relasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Relasi"
+        android:textSize="12sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expand_spinner_add_data_value_status"
+        />
+
+    <Spinner
+        android:id="@+id/expand_spinner_add_data_value_relasi"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expand_textview_add_data_key_relasi"
+        />
+
     <!-- pendidikan -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/expand_textview_add_data_key_pendidikan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pendidikan"
+        android:textSize="12sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expand_spinner_add_data_value_relasi"
+        />
+
+    <Spinner
+        android:id="@+id/expand_spinner_add_data_value_pendidikan"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expand_textview_add_data_key_pendidikan"
+        />
+
     <!-- status pendidikan sekarang -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/expand_textview_add_data_key_statuspendidikan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status Pendidikan Sekarang"
+        android:textSize="12sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expand_spinner_add_data_value_pendidikan"
+        />
+
+    <Spinner
+        android:id="@+id/expand_spinner_add_data_value_statuspendidikan"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expand_textview_add_data_key_statuspendidikan"
+        />
+
     <!-- pekerjaan -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/expand_textview_add_data_key_pekerjaan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pekerjaan"
+        android:textSize="12sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expand_spinner_add_data_value_statuspendidikan"
+        />
+
+    <Spinner
+        android:id="@+id/expand_spinner_add_data_value_pekerjaan"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expand_textview_add_data_key_pekerjaan"
+        />
+
     <!-- ibu -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/expand_textview_add_data_key_ibu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ibu"
+        android:textSize="12sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expand_spinner_add_data_value_pekerjaan"
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/expand_edittext_add_data_value_ibu"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        app:layout_constraintTop_toBottomOf="@id/expand_textview_add_data_key_ibu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="4dp"
+        android:hint="Emak"
+        android:textCursorDrawable="@null"
+        android:background="@drawable/custom_edittext_expand"/>
+
     <!-- ayah -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/expand_textview_add_data_key_ayah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ayah"
+        android:textSize="12sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expand_edittext_add_data_value_ibu"
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/expand_edittext_add_data_value_ayah"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        app:layout_constraintTop_toBottomOf="@id/expand_textview_add_data_key_ayah"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="4dp"
+        android:hint="Bapak"
+        android:textCursorDrawable="@null"
+        android:background="@drawable/custom_edittext_expand"/>
+
+
     <!-- yatim -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/expand_textview_add_data_key_yatim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Yatim"
+        android:textSize="12sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expand_edittext_add_data_value_ayah"
+        />
+
+    <RadioGroup
+        android:id="@+id/expand_radiogroup_add_data_value_yatim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expand_textview_add_data_key_yatim"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        >
+
+        <RadioButton
+            android:id="@+id/expand_radiobutton_add_data_value_yatim_ya"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:checked="true"
+            android:text="Ya"
+            android:background="@drawable/custom_edittext_expand"
+            android:buttonTint="@color/colorPrimary"/>
+
+        <RadioButton
+            android:id="@+id/expand_radiobutton_add_data_value_yatim_tidak"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="20dp"
+            android:text="Tidak"
+            android:background="@drawable/custom_edittext_expand"
+            android:buttonTint="@color/colorPrimary"/>
+
+    </RadioGroup>
+
     <!-- piatu -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/expand_textview_add_data_key_piatu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Piatu"
+        android:textSize="12sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expand_radiogroup_add_data_value_yatim"
+        />
+
+    <RadioGroup
+        android:id="@+id/expand_radiogroup_add_data_value_piatu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expand_textview_add_data_key_piatu"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        >
+
+        <RadioButton
+            android:id="@+id/expand_radiobutton_add_data_value_piatu_ya"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:checked="true"
+            android:text="Ya"
+            android:background="@drawable/custom_edittext_expand"
+            android:buttonTint="@color/colorPrimary"/>
+
+        <RadioButton
+            android:id="@+id/expand_radiobutton_add_data_value_piatu_tidak"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="20dp"
+            android:text="Tidak"
+            android:background="@drawable/custom_edittext_expand"
+            android:buttonTint="@color/colorPrimary"/>
+
+    </RadioGroup>
+
     <!-- status penerima bantuan -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/expand_textview_add_data_key_statuspenerimabantuan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status Penerima Bantuan"
+        android:textSize="12sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expand_radiogroup_add_data_value_piatu"
+        />
+
+    <RadioGroup
+        android:id="@+id/expand_radiogroup_add_data_value_statuspenerimabantuan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expand_textview_add_data_key_statuspenerimabantuan"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        >
+
+        <RadioButton
+            android:id="@+id/expand_radiobutton_add_data_value_statuspenerimabantuan_ya"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:checked="true"
+            android:text="Ya"
+            android:background="@drawable/custom_edittext_expand"
+            android:buttonTint="@color/colorPrimary"/>
+
+        <RadioButton
+            android:id="@+id/expand_radiobutton_add_data_value_statuspenerimabantuan_tidak"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="20dp"
+            android:text="Tidak"
+            android:background="@drawable/custom_edittext_expand"
+            android:buttonTint="@color/colorPrimary"/>
+
+    </RadioGroup>
+
     <!-- disabilitas -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/expand_textview_add_data_key_disabilitas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Disabilitas"
+        android:textSize="12sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expand_radiogroup_add_data_value_statuspenerimabantuan"
+        />
+
+    <Spinner
+        android:id="@+id/expand_spinner_add_data_value_disabilitas"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expand_textview_add_data_key_disabilitas"
+        />
+
     <!-- keanggotaan ormas -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/expand_textview_add_data_key_ormas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Keanggotaan Ormas"
+        android:textSize="12sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expand_spinner_add_data_value_disabilitas"
+        />
+
+    <RadioGroup
+        android:id="@+id/expand_radiogroup_add_data_value_ormas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expand_textview_add_data_key_ormas"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        >
+
+        <RadioButton
+            android:id="@+id/expand_radiobutton_add_data_value_ormas_ya"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:checked="true"
+            android:text="Ya"
+            android:background="@drawable/custom_edittext_expand"
+            android:buttonTint="@color/colorPrimary"/>
+
+        <RadioButton
+            android:id="@+id/expand_radiobutton_add_data_value_ormas_tidak"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="20dp"
+            android:text="Tidak"
+            android:background="@drawable/custom_edittext_expand"
+            android:buttonTint="@color/colorPrimary"/>
+
+    </RadioGroup>
 
 
 
