@@ -2,13 +2,170 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/margin_20dp">
+
+    <!-- nik -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/expand_textview_add_data_key_nik"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NIK"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/expand_edittext_add_data_value_nik"
         android:layout_width="match_parent"
         android:layout_height="52dp"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expand_textview_add_data_key_nik"
         app:layout_constraintStart_toStartOf="parent"
-        android:hint="asdasd"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="4dp"
+        android:hint="123812930174"
+        android:textCursorDrawable="@null"
+        android:background="@drawable/custom_edittext_expand"/>
+
+    <!-- nama -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/expand_textview_add_data_key_nama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama"
+        android:textSize="12sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expand_edittext_add_data_value_nik"
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/expand_edittext_add_data_value_nama"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        app:layout_constraintTop_toBottomOf="@id/expand_textview_add_data_key_nama"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="4dp"
+        android:hint="JohnDoe"
+        android:textCursorDrawable="@null"
+        android:background="@drawable/custom_edittext_expand"/>
+
+
+    <!-- jenis kelamin -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/expand_textview_add_data_key_jeniskelamin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jenis Kelamin"
+        android:textSize="12sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expand_edittext_add_data_value_nama"
+        />
+
+    <RadioGroup
+        android:id="@+id/expand_radiogroup_add_data_value_jeniskelamin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expand_textview_add_data_key_jeniskelamin"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        >
+
+        <RadioButton
+            android:id="@+id/expand_radiobutton_add_data_value_jeniskelamin_laki"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:checked="true"
+            android:text="Laki-laki"
+            android:background="@drawable/custom_edittext_expand"
+            android:buttonTint="@color/colorPrimary"/>
+
+        <RadioButton
+            android:id="@+id/expand_radiobutton_add_data_value_jeniskelamin_pr"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="@dimen/margin_20dp"
+            android:checked="true"
+            android:text="Perempuan"
+            android:background="@drawable/custom_edittext_expand"
+            android:buttonTint="@color/colorPrimary"/>
+
+    </RadioGroup>
+
+
+    <!-- tempat lahir -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/expand_textview_add_data_key_tempatlahir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tempat Lahir"
+        android:textSize="12sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expand_radiogroup_add_data_value_jeniskelamin"
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/expand_edittext_add_data_value_tempatlahir"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        app:layout_constraintTop_toBottomOf="@id/expand_textview_add_data_key_tempatlahir"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="4dp"
+        android:hint="Jakarta"
+        android:textCursorDrawable="@null"
+        android:background="@drawable/custom_edittext_expand"/>
+
+    <!-- tanggal lahir -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/expand_textview_add_data_key_tanggallahir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tanggal Lahir"
+        android:textSize="12sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expand_edittext_add_data_value_tempatlahir"
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/expand_edittext_add_data_value_tanggallahir"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        app:layout_constraintTop_toBottomOf="@id/expand_textview_add_data_key_tanggallahir"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="4dp"
+        android:hint="dd/mm/yyyy"
+        android:textCursorDrawable="@null"
+        android:clickable="true"
+        android:editable="false"
+        android:background="@drawable/custom_edittext_expand"/>
+
+
+    <!-- golongan darah -->
+
+    <!-- agama -->
+    <!-- status -->
+    <!-- relasi -->
+    <!-- pendidikan -->
+    <!-- status pendidikan sekarang -->
+    <!-- pekerjaan -->
+    <!-- ibu -->
+    <!-- ayah -->
+    <!-- yatim -->
+    <!-- piatu -->
+    <!-- status penerima bantuan -->
+    <!-- disabilitas -->
+    <!-- keanggotaan ormas -->
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

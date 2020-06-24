@@ -10,10 +10,10 @@ public class User {
     private String email;
     private boolean is_active;
     private String role_id;
-    private String id_kecamatan;
-    private String id_desa;
+    private String kecamatan_id;
+    private String desa_id;
 
-    public User(int id_user, String created_at, String updated_at, String name, String username, String password, String email, boolean is_active, String role_id, String id_kecamatan, String id_desa) {
+    public User(int id_user, String created_at, String updated_at, String name, String username, String password, String email, boolean is_active, String role_id, String kecamatan_id, String desa_id) {
         this.id_user = id_user;
         this.created_at = created_at;
         this.updated_at = updated_at;
@@ -23,14 +23,15 @@ public class User {
         this.email = email;
         this.is_active = is_active;
         this.role_id = role_id;
-        this.id_kecamatan = id_kecamatan;
-        this.id_desa = id_desa;
+        this.kecamatan_id = kecamatan_id;
+        this.desa_id = desa_id;
     }
 
-    public User(int id_user, String username, String password) {
+    public User(int id_user, String username, String password, String kecamatan_id) {
         this.id_user = id_user;
         this.username = username;
         this.password = password;
+        this.kecamatan_id = kecamatan_id;
     }
 
     public int getId_user() {
@@ -105,19 +106,19 @@ public class User {
         this.role_id = role_id;
     }
 
-    public String getId_kecamatan() {
-        return id_kecamatan;
+    public String getkecamatan_id() {
+        return kecamatan_id;
     }
 
-    public void setId_kecamatan(String id_kecamatan) {
-        this.id_kecamatan = id_kecamatan;
+    public void setkecamatan_id(String kecamatan_id) {
+        this.kecamatan_id = kecamatan_id;
     }
 
-    public String getId_desa() {
-        return id_desa;
+    public String getdesa_id() {
+        return desa_id;
     }
 
-    public void setId_desa(String id_desa) {
-        this.id_desa = id_desa;
+    public void setdesa_id(String desa_id) {
+        this.desa_id = desa_id;
     }
 }

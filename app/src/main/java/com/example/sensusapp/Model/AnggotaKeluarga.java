@@ -44,6 +44,8 @@ public class AnggotaKeluarga implements Parcelable {
         this.nik = nik;
         this.nama = nama;
     }
+    public AnggotaKeluarga() {
+    }
 
     public AnggotaKeluarga(int id, String created_at, String updated_at, String nik, int kartu_keluarga_id, String nama, String jenis_kelamin, String tempat_lahir, String tanggal_lahir, String golongan_darah, String agama, int status_id, Status status, int relasi_id, Relasi relasi, int pendidikan_id, Pendidikan pendidikan, String status_pendidikan_sekarang, int pekerjaan_id, Pekerjaan pekerjaan, String ibu, String ayah, boolean yatim, boolean piatu, String status_penerima_bantuan, int disabilitas_id, Disabilitas disabilitas, String keanggotaan_ormas) {
         this.id = id;

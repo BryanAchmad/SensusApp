@@ -456,8 +456,34 @@
                     app:layout_constraintTop_toBottomOf="@id/textview_add_data_konsumsiairminum"
                     />
 
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_add_data_jumlahanggota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Jumlah Anggota Keluarga"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/constraint_add_data"
+            app:layout_constraintTop_toBottomOf="@id/spinner_add_data_konsumsiairminum" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edittext_add_data_jumlahanggota"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/custom_edittext"
+            android:hint="0"
+            android:textSize="12sp"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="@id/constraint_add_data"
+            app:layout_constraintStart_toStartOf="@id/constraint_add_data"
+            app:layout_constraintTop_toBottomOf="@id/textview_add_data_jumlahanggota" />
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
 
     </ScrollView>
 

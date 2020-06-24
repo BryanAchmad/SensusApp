@@ -6,7 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -19,6 +21,8 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.sensusapp.Api.APIservice;
 import com.example.sensusapp.Api.APIurl;
 import com.example.sensusapp.Api.Result;
+import com.example.sensusapp.Api.SharedPrefManager;
+import com.example.sensusapp.Model.Master.Desa;
 import com.example.sensusapp.Model.Master.Disabilitas;
 import com.example.sensusapp.Model.Master.JenisFasilitasAirBersih;
 import com.example.sensusapp.Model.Master.JenisSanitasi;
@@ -41,6 +45,23 @@ public class FragmentAddKartuKeluarga extends Fragment {
     private Spinner spinnerFasilitasAirBersih;
     private Spinner spinnerKonsumsiAir;
     private Spinner spinnerSanitasi;
+    private Spinner spinnerDesa;
+    private Spinner spinnerStatusRumah;
+    private Spinner spinnerTanahGarapan;
+    private EditText editTextJumlahAnggota;
+    private EditText editTextNokk;
+    private EditText editTextNama;
+    private EditText editTextAlamat;
+    private EditText editTextDusun;
+    private EditText editTextRT;
+    private EditText editTextRW;
+    private EditText editTextJumlahTanahGarapan;
+    private EditText editTextLuasTanahGarapan;
+    private RadioGroup radioGroupStatusKemiskinan;
+
+
+    private SharedPrefManager sharedPrefManager;
+    private static String[] item = new String[] {"Sewa", "Milik Sendiri", "Milik Orang Tua"};
 
     public FragmentAddKartuKeluarga() {
 
@@ -55,21 +76,87 @@ public class FragmentAddKartuKeluarga extends Fragment {
         spinnerFasilitasAirBersih = view.findViewById(R.id.spinner_add_data_jenisfasilitasair);
         spinnerKonsumsiAir = view.findViewById(R.id.spinner_add_data_konsumsiairminum);
         spinnerSanitasi= view.findViewById(R.id.spinner_add_data_jenissanitasi);
+        spinnerDesa = view.findViewById(R.id.spinner_add_data_desa);
+        spinnerStatusRumah = view.findViewById(R.id.spinner_add_data_statusrumah);
+        spinnerTanahGarapan = view.findViewById(R.id.spinner_add_data_statustanahgarapan);
+        editTextJumlahAnggota = view.findViewById(R.id.edittext_add_data_jumlahanggota);
+        editTextNokk = view.findViewById(R.id.edittext_add_data_nokk);
+        editTextNama = view.findViewById(R.id.edittext_add_data_nama);
+        editTextAlamat = view.findViewById(R.id.edittext_add_data_alamat);
+        editTextDusun = view.findViewById(R.id.edittext_add_data_dusun);
+        editTextRT = view.findViewById(R.id.edittext_add_data_rt);
+        editTextRW = view.findViewById(R.id.edittext_add_data_rw);
+        editTextJumlahTanahGarapan = view.findViewById(R.id.edittext_add_data_jumlahtanahgarapan);
+        editTextLuasTanahGarapan = view.findViewById(R.id.edittext_add_data_luastanahgarapan);
+
+
+//        Bundle bundle = new Bundle();
+//        bundle.putString("jumlah_anggota", editTextJumlahAnggota.toString());
+
+
+        ArrayAdapter<String> adapterStatus = new ArrayAdapter<String>(view.getContext(), android.R.layout.simple_spinner_dropdown_item, item);
+        spinnerStatusRumah.setAdapter(adapterStatus);
+
+        ArrayAdapter<String> adapterTanah = new ArrayAdapter<String>(view.getContext(), android.R.layout.simple_spinner_dropdown_item, item);
+        spinnerTanahGarapan.setAdapter(adapterTanah);
 
         buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
                 fragmentManager = getFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.framelayout_fragment_add_data, new FragmentAddAnggotaKeluarga()).addToBackStack(null).commit();
+                FragmentAddAnggotaKeluarga fragmentAddAnggotaKeluarga = new FragmentAddAnggotaKeluarga();
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("jumlah_anggota", Integer.parseInt(editTextJumlahAnggota.getText().toString()));
+                fragmentAddAnggotaKeluarga.setArguments(bundle);
+                fragmentTransaction.replace(R.id.framelayout_fragment_add_data, fragmentAddAnggotaKeluarga).addToBackStack(null).commit();
+
             }
         });
 
         parseFasilitasAirBersih();
         parseKonsumsiAir();
         parseJenisSanitasi();
+        parseDesa();
 
         return view;
+    }
+
+
+
+    void parseDesa() {
+        APIservice apIservice = APIurl.createService(APIservice.class, getContext());
+
+        //String path = sharedPrefManager.getUser().getkecamatan_id();
+        String path = SharedPrefManager.getInstance(getContext()).getUser().getkecamatan_id();
+
+        Call<Result<List<Desa>>> resultCall = apIservice.getDesa(path);
+
+        resultCall.enqueue(new Callback<Result<List<Desa>>>() {
+            @Override
+            public void onResponse(Call<Result<List<Desa>>> call, Response<Result<List<Desa>>> response) {
+                if (response.body() != null && response.body().isSuccessfull()) {
+                    List<Desa> desaList = response.body().getData();
+                    List<String> list = new ArrayList<String>();
+
+                    for (int i = 0; i < desaList.size(); i++ ) {
+                        list.add(desaList.get(i).getDesa());
+                    }
+
+                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(view.getContext(), android.R.layout.simple_spinner_item, list);
+                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    spinnerDesa.setAdapter(adapter);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Result<List<Desa>>> call, Throwable t) {
+
+            }
+        });
     }
 
     void parseFasilitasAirBersih() {

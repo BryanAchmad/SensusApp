@@ -18,6 +18,7 @@ public class SharedPrefManager {
     private static final String KEY_USER_NAME = "keyusername";
     private static final String KEY_USER_EMAIL = "keyuseremail";
     private static final String KEY_USER_TOKEN = "keyusertoken";
+    private static final String KEY_USER_ID_KECAMATAN = "keyuserkecamatanid";
 
 
     private SharedPrefManager(Context context) {
@@ -38,6 +39,7 @@ public class SharedPrefManager {
         editor.putInt(KEY_USER_ID, user.getId_user());
         editor.putString(KEY_USER_EMAIL, user.getEmail());
         editor.putString(KEY_USER_NAME, user.getUsername());
+        editor.putString(KEY_USER_ID_KECAMATAN, user.getkecamatan_id());
         editor.apply();
 
         return true;
@@ -58,7 +60,8 @@ public class SharedPrefManager {
         return new User(
                 sharedPreferences.getInt(KEY_USER_ID, 0),
                 sharedPreferences.getString(KEY_USER_NAME, null),
-                sharedPreferences.getString(KEY_USER_EMAIL, null)
+                sharedPreferences.getString(KEY_USER_EMAIL, null),
+                sharedPreferences.getString(KEY_USER_ID_KECAMATAN, null)
         );
     }
 

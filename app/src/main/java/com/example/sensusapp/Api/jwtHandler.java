@@ -20,6 +20,7 @@ public class jwtHandler implements Interceptor {
     private SharedPrefManager sharedPrefManager;
 
     public jwtHandler(Context context) {
+        this.context = context;
         sharedPrefManager = SharedPrefManager.getInstance(context);
     }
 

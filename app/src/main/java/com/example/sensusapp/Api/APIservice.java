@@ -4,6 +4,7 @@ import android.service.autofill.Sanitizer;
 
 import com.example.sensusapp.LoginResponse;
 import com.example.sensusapp.Model.KartuKeluarga;
+import com.example.sensusapp.Model.Master.Desa;
 import com.example.sensusapp.Model.Master.Disabilitas;
 import com.example.sensusapp.Model.Master.JenisFasilitasAirBersih;
 import com.example.sensusapp.Model.Master.JenisSanitasi;
@@ -71,5 +72,10 @@ public interface APIservice {
     @PUT("sensus/{path}")
     Call<Result<KartuKeluarga>> updateSensus(
             @Path("path") String path
+    );
+
+    @GET("wilayah/desa?")
+    Call<Result<List<Desa>>> getDesa(
+            @Query("kecamatan_id") String kecamatan_id
     );
 }
