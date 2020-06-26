@@ -39,7 +39,10 @@ public interface APIservice {
     Call<Result<List<KartuKeluarga>>> sensus();
 
     @GET("master/status")
-    Call<Result<List<Status>>> status();
+    Call<Result<List<Status>>> getStatus();
+
+    @GET("master/relasi")
+    Call<Result<List<Relasi>>> getRelasi();
 
     @GET("master/disabilitas")
     Call<Result<List<Disabilitas>>> disabilitas();

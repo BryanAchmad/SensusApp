@@ -140,13 +140,15 @@ public class FragmentAddKartuKeluarga extends Fragment {
             public void onResponse(Call<Result<List<Desa>>> call, Response<Result<List<Desa>>> response) {
                 if (response.body() != null && response.body().isSuccessfull()) {
                     List<Desa> desaList = response.body().getData();
-                    List<String> list = new ArrayList<String>();
+                    List<Desa> list = new ArrayList<>();
 
-                    for (int i = 0; i < desaList.size(); i++ ) {
-                        list.add(desaList.get(i).getDesa());
-                    }
+                    list.addAll(desaList);
 
-                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(view.getContext(), android.R.layout.simple_spinner_item, list);
+//                    for (int i = 0; i < desaList.size(); i++ ) {
+//                        list.add(desaList.get(i).getDesa());
+//                    }
+
+                    ArrayAdapter<Desa> adapter = new ArrayAdapter<Desa>(view.getContext(), android.R.layout.simple_spinner_item, list);
                     adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                     spinnerDesa.setAdapter(adapter);
                 }

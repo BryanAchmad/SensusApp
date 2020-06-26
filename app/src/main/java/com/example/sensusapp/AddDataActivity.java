@@ -62,7 +62,7 @@ public class AddDataActivity extends AppCompatActivity {
     void parseJSON() {
         APIservice apIservice = APIurl.createService(APIservice.class, this);
 
-        Call<Result<List<Status>>> call = apIservice.status();
+        Call<Result<List<Status>>> call = apIservice.getStatus();
 
         call.enqueue(new Callback<Result<List<Status>>>() {
             @Override

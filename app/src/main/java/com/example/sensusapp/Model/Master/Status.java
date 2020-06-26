@@ -29,6 +29,10 @@ public class Status implements Parcelable {
         this.status = status;
     }
 
+    @Override
+    public String toString() {
+        return status;
+    }
 
     @Override
     public int describeContents() {

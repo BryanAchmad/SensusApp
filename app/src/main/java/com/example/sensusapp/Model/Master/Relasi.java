@@ -28,6 +28,10 @@ public class Relasi implements Parcelable {
         this.relasi = relasi;
     }
 
+    @Override
+    public String toString() {
+        return relasi;
+    }
 
     @Override
     public int describeContents() {

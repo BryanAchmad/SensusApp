@@ -37,4 +37,9 @@ public class Desa {
     public void setId_kecamatan(int id_kecamatan) {
         this.id_kecamatan = id_kecamatan;
     }
+
+    @Override
+    public String toString() {
+        return desa;
+    }
 }

@@ -28,6 +28,10 @@ public class Disabilitas implements Parcelable {
         this.kategori = kategori;
     }
 
+    @Override
+    public String toString() {
+        return kategori;
+    }
 
     @Override
     public int describeContents() {

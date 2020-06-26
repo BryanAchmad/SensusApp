@@ -28,6 +28,10 @@ public class Pekerjaan implements Parcelable {
         this.pekerjaan = pekerjaan;
     }
 
+    @Override
+    public String toString() {
+        return pekerjaan;
+    }
 
     @Override
     public int describeContents() {

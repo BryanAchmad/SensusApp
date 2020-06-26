@@ -28,6 +28,10 @@ public class Pendidikan implements Parcelable {
         this.pendidikan = pendidikan;
     }
 
+    @Override
+    public String toString() {
+        return pendidikan;
+    }
 
     @Override
     public int describeContents() {
