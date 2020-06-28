@@ -3,11 +3,11 @@ package com.example.sensusapp.Model.Master;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class KonsumsiAirMinum{
+public class KonsumsiAirBersih {
     private int id;
     private String jenis;
 
-    public KonsumsiAirMinum(int id, String jenis) {
+    public KonsumsiAirBersih(int id, String jenis) {
         this.id = id;
         this.jenis = jenis;
     }
@@ -26,5 +26,10 @@ public class KonsumsiAirMinum{
 
     public void setJenis(String jenis) {
         this.jenis = jenis;
+    }
+
+    @Override
+    public String toString() {
+        return jenis;
     }
 }

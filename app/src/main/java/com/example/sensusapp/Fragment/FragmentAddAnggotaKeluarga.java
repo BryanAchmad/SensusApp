@@ -1,10 +1,13 @@
 package com.example.sensusapp.Fragment;
 
 import android.os.Bundle;
+import android.util.ArrayMap;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -20,6 +23,7 @@ import com.example.sensusapp.Api.APIservice;
 import com.example.sensusapp.Api.APIurl;
 import com.example.sensusapp.Api.Result;
 import com.example.sensusapp.Model.AnggotaKeluarga;
+import com.example.sensusapp.Model.KartuKeluarga;
 import com.example.sensusapp.Model.Master.Disabilitas;
 import com.example.sensusapp.Model.Master.Pekerjaan;
 import com.example.sensusapp.Model.Master.Pendidikan;
@@ -27,9 +31,14 @@ import com.example.sensusapp.Model.Master.Relasi;
 import com.example.sensusapp.Model.Master.Status;
 import com.example.sensusapp.R;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
+import okhttp3.RequestBody;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -38,6 +47,7 @@ public class FragmentAddAnggotaKeluarga extends Fragment {
 
     private RecyclerView recyclerView;
     private View view;
+    private Button buttonSimpan;
     private AddAnggotaKeluargaAdapter addAnggotaKeluargaAdapter;
     private ArrayList<AnggotaKeluarga> list;
     private List<Status> statusArrayList = new ArrayList<>();
@@ -45,6 +55,9 @@ public class FragmentAddAnggotaKeluarga extends Fragment {
     private List<Pendidikan> pendidikanList = new ArrayList<>();
     private List<Pekerjaan> pekerjaanList = new ArrayList<>();
     private List<Disabilitas> disabilitasList = new ArrayList<>();
+    private List<KartuKeluarga> kartuKeluargas = new ArrayList<>();
+    private Map<String, Object> objectMap;
+    private KartuKeluarga kartuKeluarga;
 
 
 
@@ -59,6 +72,7 @@ public class FragmentAddAnggotaKeluarga extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.add_data_anggota_keluarga_fragment, container, false);
         recyclerView = view.findViewById(R.id.recyclerview_add_detail_anggota_keluarga);
+        buttonSimpan = view.findViewById(R.id.button_add_detail_anggota_keluarga_simpan);
 
 
         recyclerView.setHasFixedSize(true);
@@ -78,31 +92,73 @@ public class FragmentAddAnggotaKeluarga extends Fragment {
             recyclerView.setAdapter(addAnggotaKeluargaAdapter);
         }
 
+        Log.d("anggotaku", String.valueOf(addAnggotaKeluargaAdapter.anggotaKeluargas));
+        Bundle bundle1 = this.getArguments();
+        if (bundle1 != null) {
+            kartuKeluarga = bundle1.getParcelable("kartu_keluarga");
+            Log.d("log kartu kerluarga", String.valueOf(kartuKeluarga));
+            Log.d("nama", kartuKeluarga.getNama());
+            kartuKeluarga.setAnggota_keluarga(addAnggotaKeluargaAdapter.anggotaKeluargas);
+        }
+
+
 
         parseStatus();
         parseJSON();
 
+        objectMap = new ArrayMap<>();
+        objectMap.put("no_kk", kartuKeluarga.getNo_kk());
+        objectMap.put("nama", kartuKeluarga.getNama());
+        objectMap.put("address", kartuKeluarga.getAddress());
+        objectMap.put("rt", kartuKeluarga.getRt());
+        objectMap.put("rw", kartuKeluarga.getRw());
+        objectMap.put("dusun", kartuKeluarga.getDusun());
+        objectMap.put("desa_id", kartuKeluarga.getDesa_id());
+        objectMap.put("status_rumah", kartuKeluarga.getStatus_rumah());
+        objectMap.put("status_tanah_garapan", kartuKeluarga.getStatus_tanah_garapan());
+        objectMap.put("jumlah_tanah_garapan", kartuKeluarga.getJumlah_tanah_garapan());
+        objectMap.put("luas_tanah_garapan", kartuKeluarga.getLuas_tanah_garapan());
+        objectMap.put("status_kemiskinan", kartuKeluarga.isStatus_kemiskinan());
+        objectMap.put("jenis_fasilitas_air_bersih_id", kartuKeluarga.getJenis_fasilitas_air_bersih_id());
+        objectMap.put("jenis_sanitasi_id", kartuKeluarga.getJenis_sanitasi_id());
+        objectMap.put("konsumsi_air_minum_id", kartuKeluarga.getKonsumsi_air_minum_id());
+        objectMap.put("anggota_keluarga", kartuKeluarga.getAnggota_keluarga());
 
+        Log.d( " nama", kartuKeluarga.getNama());
 
+        buttonSimpan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendData();
 
-//
-//        expandableCardView = view.findViewById(R.id.expandable_cardview_add_keluarga_layout);
-//        expandableCardView.setOnExpandedListener(new ExpandableCardView.OnExpandedListener() {
-//            @Override
-//            public void onExpandChanged(View v, boolean isExpanded) {
-//                Toast.makeText(view.getContext(), isExpanded ? "expanded" : "Collapse", Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//        addData();
-//
-//        recyclerView = view.findViewById(R.id.recyclerview_add_detail_anggota_keluarga);
-//        addAnggotaKeluargaAdapter = new AddAnggotaKeluargaAdapter(list, getContext());
-//        recyclerView.setHasFixedSize(true);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-//        recyclerView.setAdapter(addAnggotaKeluargaAdapter);
-
+            }
+        });
 
         return view;
+    }
+
+    void sendData() {
+        APIservice apIservice = APIurl.createService(APIservice.class, getContext());
+
+        RequestBody requestBody = RequestBody.create((new JSONObject(objectMap)).toString(), okhttp3.MediaType.parse("application/json; charset=utf-8"));
+
+        Call<ResponseBody> responseBodyCall = apIservice.addSensus(requestBody);
+
+        responseBodyCall.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                try {
+                    Toast.makeText(getContext(), "sukses", Toast.LENGTH_SHORT).show();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Toast.makeText(getContext(), t.getMessage(), Toast.LENGTH_SHORT ).show();
+            }
+        });
     }
 
    void parseStatus() {

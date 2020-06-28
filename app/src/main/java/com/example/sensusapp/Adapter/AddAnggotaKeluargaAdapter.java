@@ -44,7 +44,7 @@ import retrofit2.Response;
 
 public class AddAnggotaKeluargaAdapter extends RecyclerView.Adapter<AddAnggotaKeluargaAdapter.ViewHolder> {
 
-    private ArrayList<AnggotaKeluarga> anggotaKeluargas = new ArrayList<>();
+    public ArrayList<AnggotaKeluarga> anggotaKeluargas = new ArrayList<>();
     private Context context;
     private List<Status> statusArrayList;
     private List<Relasi> relasiList;

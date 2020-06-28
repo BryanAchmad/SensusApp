@@ -29,4 +29,9 @@ public class JenisSanitasi {
     public void setJenis(String jenis) {
         this.jenis = jenis;
     }
+
+    @Override
+    public String toString() {
+        return jenis;
+    }
 }

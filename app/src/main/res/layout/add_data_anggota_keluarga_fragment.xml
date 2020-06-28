@@ -8,23 +8,26 @@
          <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerview_add_detail_anggota_keluarga"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:padding="@dimen/margin_20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/button_add_detail_anggota_keluarga_simpan"
           />
 
-<!--        <com.alespero.expandablecardview.ExpandableCardView-->
-<!--            android:id="@+id/expandable_cardview_add_keluarga_layout"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            app:inner_view="@layout/add_anggota_keluarga_layout"-->
-<!--            app:expandOnClick="true"-->
-<!--            app:animationDuration="300"-->
-<!--            app:startExpanded="false"/>-->
-<!--  //  </androidx.recyclerview.widget.RecyclerView>-->
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_add_detail_anggota_keluarga_simpan"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Simpan"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
