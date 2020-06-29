@@ -198,6 +198,8 @@ public class AddAnggotaKeluargaAdapter extends RecyclerView.Adapter<AddAnggotaKe
                 ArrayAdapter<String> statusPendidikanAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, statusPendidikanItem);
                 statusPendidikanAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spinnerStatusPendidikan.setAdapter(statusPendidikanAdapter);
+                String statuspendidikan = spinnerStatusPendidikan.getSelectedItem().toString();
+                anggotaKeluargas.get(position).setStatus_pendidikan_sekarang(statuspendidikan);
 
                 //SpinnerStatus
                 ArrayAdapter<Status> adapterStatus = new ArrayAdapter<Status>(context, android.R.layout.simple_spinner_item, statusArrayList);

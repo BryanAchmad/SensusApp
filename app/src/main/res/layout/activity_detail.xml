@@ -80,9 +80,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
            android:padding="8dp"
-            app:layout_constraintEnd_toEndOf="@id/constraint_detail_kk"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toStartOf="@id/button_delete_detail_kartu_keluarga"
             app:layout_constraintTop_toTopOf="@id/constraint_detail_kk"
             android:src="@drawable/ic_baseline_edit_24"
+            android:background="@null"
+            />
+        <ImageButton
+            android:id="@+id/button_delete_detail_kartu_keluarga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="@id/constraint_detail_kk"
+            app:layout_constraintTop_toTopOf="@id/constraint_detail_kk"
+            android:src="@drawable/ic_baseline_delete_24"
             android:background="@null"
             />
 

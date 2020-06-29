@@ -66,10 +66,13 @@ public class FragmentAddKartuKeluarga extends Fragment {
     private List<JenisFasilitasAirBersih> jenisFasilitasAirBersihs = new ArrayList<>();
     private List<KonsumsiAirBersih> konsumsiAirMinums = new ArrayList<>();
     private List<JenisSanitasi> jenisSanitasis = new ArrayList<>();
+    private KartuKeluarga kartuKeluarga;
     public int desa;
     public int fasilitas;
     public int konsumsiair;
     public int sanitasi;
+    private int jumlahtanahgarapan = 0;
+    private int luastanahgarapan = 0;
     //private AnggotaKeluarga anggotaKeluarga;
 
     private SharedPrefManager sharedPrefManager;
@@ -102,22 +105,10 @@ public class FragmentAddKartuKeluarga extends Fragment {
         editTextLuasTanahGarapan = view.findViewById(R.id.edittext_add_data_luastanahgarapan);
         radioGroupStatusKemiskinan = view.findViewById(R.id.radiogroup_add_data_statuskemiskinan);
 
-
-        int selectedstatuskemiskinan = radioGroupStatusKemiskinan.getCheckedRadioButtonId();
-        statuskemiskinan = view.findViewById(selectedstatuskemiskinan);
-        boolean statusmiskin;
-        if (statuskemiskinan.getText().toString().equals("Ya")){
-            statusmiskin = true;
-        } else {
-            statusmiskin = false;
-        }
-
         parseFasilitasAirBersih();
         parseKonsumsiAir();
         parseJenisSanitasi();
         parseDesa();
-//        Bundle bundle = new Bundle();
-//        bundle.putString("jumlah_anggota", editTextJumlahAnggota.toString());
 
 
         ArrayAdapter<String> adapterStatus = new ArrayAdapter<String>(view.getContext(), android.R.layout.simple_spinner_dropdown_item, item);
@@ -126,22 +117,8 @@ public class FragmentAddKartuKeluarga extends Fragment {
         ArrayAdapter<String> adapterTanah = new ArrayAdapter<String>(view.getContext(), android.R.layout.simple_spinner_dropdown_item, item);
         spinnerTanahGarapan.setAdapter(adapterTanah);
 
-        String nokk = editTextNokk.getText().toString();
-        String nama = editTextNama.getText().toString();
-        String alamat = editTextAlamat.getText().toString();
-        String dusun = editTextDusun.getText().toString();
-        String rt = editTextRT.getText().toString();
-        String rw = editTextRW.getText().toString();
 
-        int jumlahtanahgarapan = 0;
-        if (editTextJumlahTanahGarapan.length() > 0){
-            jumlahtanahgarapan = Integer.parseInt(editTextJumlahTanahGarapan.getText().toString());
-        }
 
-        int luastanahgarapan = 0;
-        if (editTextLuasTanahGarapan.length() > 0) {
-            luastanahgarapan = Integer.parseInt(editTextLuasTanahGarapan.getText().toString());
-        }
 
 
 
@@ -198,22 +175,8 @@ public class FragmentAddKartuKeluarga extends Fragment {
 
 
 
-        KartuKeluarga kartuKeluarga = new KartuKeluarga(
-                nokk,
-                nama,
-                alamat,
-                rt, rw,
-                dusun,
-                desa,
-                statusrumah,
-                statustanahgarapan,
-                jumlahtanahgarapan,
-                luastanahgarapan,
-                statusmiskin,
-                fasilitas,
-                sanitasi,
-                konsumsiair,
-                new ArrayList<AnggotaKeluarga>());
+
+
        // KartuKeluarga kartuKeluarga = new KartuKeluarga(nokk)
 
 
@@ -226,9 +189,55 @@ public class FragmentAddKartuKeluarga extends Fragment {
 
                 Bundle bundle = new Bundle();
                 bundle.putInt("jumlah_anggota", Integer.parseInt(editTextJumlahAnggota.getText().toString()));
-                Log.d("kaka ku", String.valueOf(kartuKeluarga));
+                //Log.d("kaka ku", String.valueOf(kartuKeluarga));
 
+
+
+                int selectedstatuskemiskinan = radioGroupStatusKemiskinan.getCheckedRadioButtonId();
+                statuskemiskinan = view.findViewById(selectedstatuskemiskinan);
+                boolean statusmiskin;
+                if (statuskemiskinan.getText().toString().equals("Ya")){
+                    statusmiskin = true;
+                } else {
+                    statusmiskin = false;
+                }
+
+                String nokk = editTextNokk.getText().toString();
+                String nama = editTextNama.getText().toString();
+                String alamat = editTextAlamat.getText().toString();
+                String dusun = editTextDusun.getText().toString();
+                String rt = editTextRT.getText().toString();
+                String rw = editTextRW.getText().toString();
+
+
+                if (editTextJumlahTanahGarapan.length() > 0){
+                    jumlahtanahgarapan = Integer.parseInt(editTextJumlahTanahGarapan.getText().toString());
+                }
+
+
+                if (editTextLuasTanahGarapan.length() > 0) {
+                    luastanahgarapan = Integer.parseInt(editTextLuasTanahGarapan.getText().toString());
+                }
+
+                kartuKeluarga = new KartuKeluarga(
+                        nokk,
+                        nama,
+                        alamat,
+                        rt, rw,
+                        dusun,
+                        desa,
+                        statusrumah,
+                        statustanahgarapan,
+                        jumlahtanahgarapan,
+                        luastanahgarapan,
+                        statusmiskin,
+                        fasilitas,
+                        sanitasi,
+                        konsumsiair,
+                        new ArrayList<AnggotaKeluarga>());
                 bundle.putParcelable("kartu_keluarga", kartuKeluarga);
+
+
                 Log.d( " nama", kartuKeluarga.getNama());
                 fragmentAddAnggotaKeluarga.setArguments(bundle);
                 fragmentTransaction.replace(R.id.framelayout_fragment_add_data, fragmentAddAnggotaKeluarga).addToBackStack(null).commit();

@@ -22,6 +22,7 @@ import com.example.sensusapp.Adapter.AddAnggotaKeluargaAdapter;
 import com.example.sensusapp.Api.APIservice;
 import com.example.sensusapp.Api.APIurl;
 import com.example.sensusapp.Api.Result;
+import com.example.sensusapp.Event.SuccessEvent;
 import com.example.sensusapp.Model.AnggotaKeluarga;
 import com.example.sensusapp.Model.KartuKeluarga;
 import com.example.sensusapp.Model.Master.Disabilitas;
@@ -31,6 +32,7 @@ import com.example.sensusapp.Model.Master.Relasi;
 import com.example.sensusapp.Model.Master.Status;
 import com.example.sensusapp.R;
 
+import org.greenrobot.eventbus.EventBus;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -94,10 +96,13 @@ public class FragmentAddAnggotaKeluarga extends Fragment {
 
         Log.d("anggotaku", String.valueOf(addAnggotaKeluargaAdapter.anggotaKeluargas));
         Bundle bundle1 = this.getArguments();
+        //Log.d("bundle", String.valueOf(bundle1.getParcelable("kartu_keluarga").describeContents()));
         if (bundle1 != null) {
             kartuKeluarga = bundle1.getParcelable("kartu_keluarga");
-            Log.d("log kartu kerluarga", String.valueOf(kartuKeluarga));
-            Log.d("nama", kartuKeluarga.getNama());
+                Log.d("kartu kel", String.valueOf(kartuKeluarga));
+//            assert kartuKeluarga != null;
+//            Log.d("log kartu kerluarga", String.valueOf(kartuKeluarga.getNo_kk()));
+//            Log.d("nama", kartuKeluarga.getNama().trim());
             kartuKeluarga.setAnggota_keluarga(addAnggotaKeluargaAdapter.anggotaKeluargas);
         }
 
@@ -106,23 +111,7 @@ public class FragmentAddAnggotaKeluarga extends Fragment {
         parseStatus();
         parseJSON();
 
-        objectMap = new ArrayMap<>();
-        objectMap.put("no_kk", kartuKeluarga.getNo_kk());
-        objectMap.put("nama", kartuKeluarga.getNama());
-        objectMap.put("address", kartuKeluarga.getAddress());
-        objectMap.put("rt", kartuKeluarga.getRt());
-        objectMap.put("rw", kartuKeluarga.getRw());
-        objectMap.put("dusun", kartuKeluarga.getDusun());
-        objectMap.put("desa_id", kartuKeluarga.getDesa_id());
-        objectMap.put("status_rumah", kartuKeluarga.getStatus_rumah());
-        objectMap.put("status_tanah_garapan", kartuKeluarga.getStatus_tanah_garapan());
-        objectMap.put("jumlah_tanah_garapan", kartuKeluarga.getJumlah_tanah_garapan());
-        objectMap.put("luas_tanah_garapan", kartuKeluarga.getLuas_tanah_garapan());
-        objectMap.put("status_kemiskinan", kartuKeluarga.isStatus_kemiskinan());
-        objectMap.put("jenis_fasilitas_air_bersih_id", kartuKeluarga.getJenis_fasilitas_air_bersih_id());
-        objectMap.put("jenis_sanitasi_id", kartuKeluarga.getJenis_sanitasi_id());
-        objectMap.put("konsumsi_air_minum_id", kartuKeluarga.getKonsumsi_air_minum_id());
-        objectMap.put("anggota_keluarga", kartuKeluarga.getAnggota_keluarga());
+
 
         Log.d( " nama", kartuKeluarga.getNama());
 
@@ -130,7 +119,8 @@ public class FragmentAddAnggotaKeluarga extends Fragment {
             @Override
             public void onClick(View v) {
                 sendData();
-
+                EventBus.getDefault().post(new SuccessEvent());
+                getActivity().finish();
             }
         });
 
@@ -138,27 +128,65 @@ public class FragmentAddAnggotaKeluarga extends Fragment {
     }
 
     void sendData() {
+//        objectMap = new ArrayMap<>();
+//        objectMap.put("no_kk", kartuKeluarga.getNo_kk());
+//        objectMap.put("nama", kartuKeluarga.getNama());
+//        objectMap.put("address", kartuKeluarga.getAddress());
+//        objectMap.put("rt", kartuKeluarga.getRt());
+//        objectMap.put("rw", kartuKeluarga.getRw());
+//        objectMap.put("dusun", kartuKeluarga.getDusun());
+//        objectMap.put("desa_id", kartuKeluarga.getDesa_id());
+//        objectMap.put("status_rumah", kartuKeluarga.getStatus_rumah());
+//        objectMap.put("status_tanah_garapan", kartuKeluarga.getStatus_tanah_garapan());
+//        objectMap.put("jumlah_tanah_garapan", kartuKeluarga.getJumlah_tanah_garapan());
+//        objectMap.put("luas_tanah_garapan", kartuKeluarga.getLuas_tanah_garapan());
+//        objectMap.put("status_kemiskinan", kartuKeluarga.isStatus_kemiskinan());
+//        objectMap.put("jenis_fasilitas_air_bersih_id", kartuKeluarga.getJenis_fasilitas_air_bersih_id());
+//        objectMap.put("jenis_sanitasi_id", kartuKeluarga.getJenis_sanitasi_id());
+//        objectMap.put("konsumsi_air_minum_id", kartuKeluarga.getKonsumsi_air_minum_id());
+//        objectMap.put("anggota_keluarga", kartuKeluarga.getAnggota_keluarga());
+//        objectMap.put("anggota_keluarga.nik", kartuKeluarga.getAnggota_keluarga().get(0).getId());
+//
+//        Log.d("asu", kartuKeluarga.getAnggota_keluarga().get(0).getNama() + "");
+
         APIservice apIservice = APIurl.createService(APIservice.class, getContext());
 
-        RequestBody requestBody = RequestBody.create((new JSONObject(objectMap)).toString(), okhttp3.MediaType.parse("application/json; charset=utf-8"));
+       // RequestBody requestBody = RequestBody.create((new JSONObject(objectMap)).toString(), okhttp3.MediaType.parse("application/json; charset=utf-8"));
 
-        Call<ResponseBody> responseBodyCall = apIservice.addSensus(requestBody);
-
-        responseBodyCall.enqueue(new Callback<ResponseBody>() {
+        Call<KartuKeluarga> responseBodyCall = apIservice.addSensus(kartuKeluarga);
+        responseBodyCall.enqueue(new Callback<KartuKeluarga>() {
             @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+            public void onResponse(Call<KartuKeluarga> call, Response<KartuKeluarga> response) {
                 try {
                     Toast.makeText(getContext(), "sukses", Toast.LENGTH_SHORT).show();
+
+
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
 
             @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Toast.makeText(getContext(), t.getMessage(), Toast.LENGTH_SHORT ).show();
+            public void onFailure(Call<KartuKeluarga> call, Throwable t) {
+
             }
         });
+
+//        responseBodyCall.enqueue(new Callback<ResponseBody>() {
+//            @Override
+//            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+//                try {
+//                    Toast.makeText(getContext(), "sukses", Toast.LENGTH_SHORT).show();
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<ResponseBody> call, Throwable t) {
+//                Toast.makeText(getContext(), t.getMessage(), Toast.LENGTH_SHORT ).show();
+//            }
+//        });
     }
 
    void parseStatus() {

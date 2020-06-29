@@ -64,8 +64,9 @@ public class FragmentInformasi extends Fragment {
             rw.setText(kartuKeluarga.getRw());
             statusrumah.setText(kartuKeluarga.getStatus_rumah());
             statustanahgarapan.setText(kartuKeluarga.getStatus_tanah_garapan());
-            jumlahtanahgarapan.setText(kartuKeluarga.getJumlah_tanah_garapan());
-            luastanahgarapan.setText(kartuKeluarga.getLuas_tanah_garapan());
+
+            jumlahtanahgarapan.setText(String.valueOf(kartuKeluarga.getJumlah_tanah_garapan()));
+            luastanahgarapan.setText(String.valueOf(kartuKeluarga.getLuas_tanah_garapan()));
 
             if(kartuKeluarga.isStatus_kemiskinan()){
                 statuskemiskinan.setText("Ya");

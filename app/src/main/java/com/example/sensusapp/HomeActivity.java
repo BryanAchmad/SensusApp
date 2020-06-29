@@ -17,7 +17,12 @@ import com.example.sensusapp.Api.APIservice;
 import com.example.sensusapp.Api.APIurl;
 import com.example.sensusapp.Api.Result;
 import com.example.sensusapp.Api.SharedPrefManager;
+import com.example.sensusapp.Event.SuccessEvent;
 import com.example.sensusapp.Model.KartuKeluarga;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,6 +72,25 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+
+
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onMessageEvent(SuccessEvent event){
+        parseJSON();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        EventBus.getDefault().unregister(this);
     }
 
     void parseJSON(){

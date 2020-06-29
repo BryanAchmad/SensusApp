@@ -102,7 +102,7 @@ public interface APIservice {
 //            );
 
     @POST("/sensus")
-    Call<ResponseBody> addSensus(
-            @Body RequestBody param
+    Call<KartuKeluarga> addSensus(
+            @Body KartuKeluarga param
             );
 }
