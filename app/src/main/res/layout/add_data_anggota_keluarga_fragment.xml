@@ -25,6 +25,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:text="Simpan"
+        android:background="@drawable/touch_effect_button_tambah"
         android:textStyle="bold"
         android:textColor="#ffffff"
         />

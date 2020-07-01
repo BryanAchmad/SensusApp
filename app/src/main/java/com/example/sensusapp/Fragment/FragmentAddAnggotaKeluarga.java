@@ -128,30 +128,8 @@ public class FragmentAddAnggotaKeluarga extends Fragment {
     }
 
     void sendData() {
-//        objectMap = new ArrayMap<>();
-//        objectMap.put("no_kk", kartuKeluarga.getNo_kk());
-//        objectMap.put("nama", kartuKeluarga.getNama());
-//        objectMap.put("address", kartuKeluarga.getAddress());
-//        objectMap.put("rt", kartuKeluarga.getRt());
-//        objectMap.put("rw", kartuKeluarga.getRw());
-//        objectMap.put("dusun", kartuKeluarga.getDusun());
-//        objectMap.put("desa_id", kartuKeluarga.getDesa_id());
-//        objectMap.put("status_rumah", kartuKeluarga.getStatus_rumah());
-//        objectMap.put("status_tanah_garapan", kartuKeluarga.getStatus_tanah_garapan());
-//        objectMap.put("jumlah_tanah_garapan", kartuKeluarga.getJumlah_tanah_garapan());
-//        objectMap.put("luas_tanah_garapan", kartuKeluarga.getLuas_tanah_garapan());
-//        objectMap.put("status_kemiskinan", kartuKeluarga.isStatus_kemiskinan());
-//        objectMap.put("jenis_fasilitas_air_bersih_id", kartuKeluarga.getJenis_fasilitas_air_bersih_id());
-//        objectMap.put("jenis_sanitasi_id", kartuKeluarga.getJenis_sanitasi_id());
-//        objectMap.put("konsumsi_air_minum_id", kartuKeluarga.getKonsumsi_air_minum_id());
-//        objectMap.put("anggota_keluarga", kartuKeluarga.getAnggota_keluarga());
-//        objectMap.put("anggota_keluarga.nik", kartuKeluarga.getAnggota_keluarga().get(0).getId());
-//
-//        Log.d("asu", kartuKeluarga.getAnggota_keluarga().get(0).getNama() + "");
 
         APIservice apIservice = APIurl.createService(APIservice.class, getContext());
-
-       // RequestBody requestBody = RequestBody.create((new JSONObject(objectMap)).toString(), okhttp3.MediaType.parse("application/json; charset=utf-8"));
 
         Call<KartuKeluarga> responseBodyCall = apIservice.addSensus(kartuKeluarga);
         responseBodyCall.enqueue(new Callback<KartuKeluarga>() {
@@ -172,21 +150,6 @@ public class FragmentAddAnggotaKeluarga extends Fragment {
             }
         });
 
-//        responseBodyCall.enqueue(new Callback<ResponseBody>() {
-//            @Override
-//            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-//                try {
-//                    Toast.makeText(getContext(), "sukses", Toast.LENGTH_SHORT).show();
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<ResponseBody> call, Throwable t) {
-//                Toast.makeText(getContext(), t.getMessage(), Toast.LENGTH_SHORT ).show();
-//            }
-//        });
     }
 
    void parseStatus() {
@@ -199,18 +162,8 @@ public class FragmentAddAnggotaKeluarga extends Fragment {
            public void onResponse(Call<Result<List<Status>>> call, Response<Result<List<Status>>> response) {
                if (response.body() != null && response.body().isSuccessfull()){
                    List<Status> statusList = response.body().getData();
-                   //List<String> list = new ArrayList<String>();
-
-//                   for (int i = 0 ; i < statusList.size() ; i++) {
-                       statusArrayList.addAll(statusList);
-//                   }
-
-
+                   statusArrayList.addAll(statusList);
                    addAnggotaKeluargaAdapter.notifyDataSetChanged();
-//                   ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item);
-//                   adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//                   adapter.setNotifyOnChange(true);
-//                   spinnerStatus.setAdapter(adapter);
                }
            }
 
@@ -230,9 +183,7 @@ public class FragmentAddAnggotaKeluarga extends Fragment {
             public void onResponse(Call<Result<List<Relasi>>> call, Response<Result<List<Relasi>>> response) {
                 if (response.body() != null && response.body().isSuccessfull()){
                     List<Relasi> relasis = response.body().getData();
-
                     relasiList.addAll(relasis);
-
                     addAnggotaKeluargaAdapter.notifyDataSetChanged();
                 }
             }
@@ -249,9 +200,7 @@ public class FragmentAddAnggotaKeluarga extends Fragment {
             public void onResponse(Call<Result<List<Pendidikan>>> call, Response<Result<List<Pendidikan>>> response) {
                 if (response.body() != null && response.body().isSuccessfull()) {
                     List<Pendidikan> pendidikans = response.body().getData();
-
                     pendidikanList.addAll(pendidikans);
-
                     addAnggotaKeluargaAdapter.notifyDataSetChanged();
 
 
@@ -270,9 +219,7 @@ public class FragmentAddAnggotaKeluarga extends Fragment {
             public void onResponse(Call<Result<List<Pekerjaan>>> call, Response<Result<List<Pekerjaan>>> response) {
                 if (response.body() != null && response.body().isSuccessfull()){
                     List<Pekerjaan> pekerjaans = response.body().getData();
-
                     pekerjaanList.addAll(pekerjaans);
-
                     addAnggotaKeluargaAdapter.notifyDataSetChanged();
                 }
             }
@@ -289,7 +236,6 @@ public class FragmentAddAnggotaKeluarga extends Fragment {
             public void onResponse(Call<Result<List<Disabilitas>>> call, Response<Result<List<Disabilitas>>> response) {
                 if (response.body() != null && response.body().isSuccessfull()) {
                     List<Disabilitas> disabilitas = response.body().getData();
-
                     disabilitasList.addAll(disabilitas);
                     addAnggotaKeluargaAdapter.notifyDataSetChanged();
                 }

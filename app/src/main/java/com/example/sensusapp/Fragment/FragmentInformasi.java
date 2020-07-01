@@ -30,6 +30,7 @@ public class FragmentInformasi extends Fragment {
     private TextView konsumsiairminum;
 
 
+
     public FragmentInformasi() {
     }
 
@@ -50,6 +51,7 @@ public class FragmentInformasi extends Fragment {
         jenisfasilitasairbersih = view.findViewById(R.id.textview_detail_informasigeneral_value_jenisfasairbersih);
         jenissanitasi = view.findViewById(R.id.textview_detail_informasigeneral_value_jenissanitasi);
         konsumsiairminum = view.findViewById(R.id.textview_detail_informasigeneral_value_konsumsiairminum);
+
 
 
 

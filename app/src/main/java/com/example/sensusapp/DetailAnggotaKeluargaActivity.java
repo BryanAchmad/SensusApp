@@ -90,7 +90,6 @@ public class DetailAnggotaKeluargaActivity extends AppCompatActivity {
 
         parseJSON();
 
-
     }
 
     void parseJSON() {

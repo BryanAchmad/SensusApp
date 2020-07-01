@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -98,6 +99,7 @@ public class AddAnggotaKeluargaAdapter extends RecyclerView.Adapter<AddAnggotaKe
                 final EditText editTextTempatLahir;
                 final EditText editTextGolonganDarah;
                 final EditText editTextAgama;
+                final EditText editTextOrmas;
                 final Spinner spinnerStatus;
                 final Spinner spinnerRelasi;
                 final Spinner spinnerPendidikan;
@@ -135,6 +137,7 @@ public class AddAnggotaKeluargaAdapter extends RecyclerView.Adapter<AddAnggotaKe
                 editTextiIbu = v.findViewById(R.id.expand_edittext_add_data_value_ibu);
                 editTextAyah = v.findViewById(R.id.expand_edittext_add_data_value_ayah);
                 editTextTanggalLahir = v.findViewById(R.id.expand_edittext_add_data_value_tanggallahir);
+                editTextOrmas = v.findViewById(R.id.expand_edittext_add_data_value_ormas_value);
 
                 spinnerStatus = v.findViewById(R.id.expand_spinner_add_data_value_status);
                 spinnerRelasi = v.findViewById(R.id.expand_spinner_add_data_value_relasi);
@@ -189,17 +192,79 @@ public class AddAnggotaKeluargaAdapter extends RecyclerView.Adapter<AddAnggotaKe
                 anggotaKeluargas.get(position).setStatus_penerima_bantuan(statusbantuanSelected.getText().toString());
 
                 //radiogroup ormas
-                int idOrmas = radioGroupOrmas.getCheckedRadioButtonId();
-                ormasSelected = v.findViewById(idOrmas);
-                anggotaKeluargas.get(position).setKeanggotaan_ormas(ormasSelected.getText().toString());
+                //int idOrmas = radioGroupOrmas.getCheckedRadioButtonId();
+                radioGroupOrmas.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(RadioGroup group, int checkedId) {
+//                        if (checkedId == R.id.expand_radiobutton_add_data_value_ormas_ya) {
+//                            editTextOrmas.setVisibility(View.VISIBLE);
+//                           // anggotaKeluargas.get(position).setKeanggotaan_ormas(editTextOrmas.getText().toString());
+//                            editTextOrmas.addTextChangedListener(new TextWatcher() {
+//                                @Override
+//                                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//
+//                                }
+//
+//                                @Override
+//                                public void onTextChanged(CharSequence s, int start, int before, int count) {
+//
+//                                }
+//
+//                                @Override
+//                                public void afterTextChanged(Editable s) {
+//                                    anggotaKeluargas.get(position).setKeanggotaan_ormas(s.toString());
+//                                }
+//                            });
+//                        } else {
+//                            editTextOrmas.setVisibility(View.GONE);
+//                            anggotaKeluargas.get(position).setKeanggotaan_ormas("Tidak");
+//                        }
+                        switch (checkedId){
+                            case R.id.expand_radiobutton_add_data_value_statuspenerimabantuan_ya:
+                                editTextOrmas.setVisibility(View.VISIBLE);
+                                editTextOrmas.addTextChangedListener(new TextWatcher() {
+                                    @Override
+                                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                                    }
+
+                                    @Override
+                                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                                    }
+
+                                    @Override
+                                    public void afterTextChanged(Editable s) {
+                                        anggotaKeluargas.get(position).setKeanggotaan_ormas(s.toString());
+                                    }
+                                });
+                                break;
+                            case R.id.expand_radiobutton_add_data_value_statuspenerimabantuan_tidak:
+                                editTextOrmas.setVisibility(View.GONE);
+                                anggotaKeluargas.get(position).setKeanggotaan_ormas(radioButtonStatusPenerimaBantuanTidak.getText().toString());
+                        }
+                    }
+                });
+
 
 
                 //spinner status pendidikan
                 ArrayAdapter<String> statusPendidikanAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, statusPendidikanItem);
                 statusPendidikanAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spinnerStatusPendidikan.setAdapter(statusPendidikanAdapter);
-                String statuspendidikan = spinnerStatusPendidikan.getSelectedItem().toString();
-                anggotaKeluargas.get(position).setStatus_pendidikan_sekarang(statuspendidikan);
+                spinnerStatusPendidikan.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                        anggotaKeluargas.get(position).setStatus_pendidikan_sekarang(parent.getItemAtPosition(pos).toString());
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+
+                    }
+                });
+//                String statuspendidikan = spinnerStatusPendidikan.getSelectedItem().toString();
+//                anggotaKeluargas.get(position).setStatus_pendidikan_sekarang(statuspendidikan);
 
                 //SpinnerStatus
                 ArrayAdapter<Status> adapterStatus = new ArrayAdapter<Status>(context, android.R.layout.simple_spinner_item, statusArrayList);
@@ -415,9 +480,11 @@ public class AddAnggotaKeluargaAdapter extends RecyclerView.Adapter<AddAnggotaKe
                 });
 
                 //set DatePicker at edittext tanggalLahir
+
                 DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
                     @Override
-                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                    public void onDateSet(DatePicker view1, int year, int month, int dayOfMonth) {
+
                         calendar.set(Calendar.YEAR, year);
                         calendar.set(Calendar.MONTH, month);
                         calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
