@@ -1,6 +1,7 @@
 package com.example.sensusapp.Adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -136,6 +137,7 @@ public class UpdateAnggotaKeluargaAdapter extends RecyclerView.Adapter<UpdateAng
                 ArrayAdapter<Status> statusArrayAdapter = new ArrayAdapter<Status>(context, android.R.layout.simple_spinner_item, statusArrayList);
                 statusArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spinnerStatusUpdate.setAdapter(statusArrayAdapter);
+                Log.d("Ngentot", statusArrayAdapter + "");
 
                 //spinner Relasi
                 ArrayAdapter<Relasi> relasiArrayAdapter = new ArrayAdapter<Relasi>(context, android.R.layout.simple_spinner_item, relasiList);

@@ -1,6 +1,7 @@
 package com.example.sensusapp.Fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,7 +36,7 @@ public class FragmentUpdateAnggotaKeluarga extends Fragment {
     private View view;
     private RecyclerView recyclerView;
     private UpdateAnggotaKeluargaAdapter updateAnggotaKeluargaAdapter;
-    private ArrayList<AnggotaKeluarga> anggotaKeluargas = new ArrayList<>();
+    private ArrayList<AnggotaKeluarga> anggotaKeluargas = new ArrayList<AnggotaKeluarga>();
     private List<Status> statusArrayList = new ArrayList<>();
     private List<Relasi> relasiList = new ArrayList<>();
     private List<Pendidikan> pendidikanList = new ArrayList<>();
@@ -48,14 +49,15 @@ public class FragmentUpdateAnggotaKeluarga extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.update_data_anggota_keluarga_fragment, container, false);
+        View view = inflater.inflate(R.layout.update_data_anggota_keluarga_fragment, container, false);
 
+        parseJSON();
+        parseStatus();
         recyclerView = view.findViewById(R.id.recyclerview_update_detail_anggota_keluarga);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
 
-        parseJSON();
-        parseStatus();
+
 
         return view;
     }
@@ -76,6 +78,7 @@ public class FragmentUpdateAnggotaKeluarga extends Fragment {
             public void onResponse(Call<Result<List<Status>>> call, Response<Result<List<Status>>> response) {
                 if (response.body() != null && response.body().isSuccessfull()){
                     List<Status> statusList = response.body().getData();
+                    Log.d("status", statusList + "");
                     statusArrayList.addAll(statusList);
                     updateAnggotaKeluargaAdapter.notifyDataSetChanged();
                 }

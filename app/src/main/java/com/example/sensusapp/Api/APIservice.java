@@ -18,6 +18,7 @@ import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -73,8 +74,9 @@ public interface APIservice {
     );
 
     @PUT("sensus/{path}")
-    Call<Result<KartuKeluarga>> updateSensus(
-            @Path("path") String path
+    Call<KartuKeluarga> updateSensus(
+            @Path("path") String path,
+            @Body KartuKeluarga kartuKeluarga
     );
 
     @GET("wilayah/desa?")
@@ -105,4 +107,5 @@ public interface APIservice {
     Call<KartuKeluarga> addSensus(
             @Body KartuKeluarga param
             );
+
 }

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -18,7 +19,10 @@ import com.example.sensusapp.Fragment.FragmentAddAnggotaKeluarga;
 import com.example.sensusapp.Fragment.FragmentUpdateAnggotaKeluarga;
 import com.example.sensusapp.Fragment.FragmentUpdateKartuKeluarga;
 import com.example.sensusapp.Model.KartuKeluarga;
+import com.example.sensusapp.Model.Master.Status;
 import com.google.android.material.tabs.TabLayout;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -90,4 +94,6 @@ public class UpdateDataActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }
