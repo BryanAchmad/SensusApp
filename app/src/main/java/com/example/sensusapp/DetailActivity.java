@@ -64,6 +64,7 @@ public class DetailActivity extends AppCompatActivity {
 
 
         parseJSON();
+
     }
 
     void parseJSON() {
@@ -77,13 +78,13 @@ public class DetailActivity extends AppCompatActivity {
                 if (response.body() != null && response.body().isSuccessfull()) {
 
                     txtNoKK.setText(response.body().getData().getNo_kk());
-                    String id = String.valueOf(response.body().getData().getId());
+                    String id = String.valueOf(response.body().getData().getNo_kk());
 
                     imageButtonEdit.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             Intent intent = new Intent(DetailActivity.this, UpdateDataActivity.class);
-                            intent.putExtra("id", id);
+                            intent.putExtra("no_kk", id);
                             startActivity(intent);
                         }
                     });

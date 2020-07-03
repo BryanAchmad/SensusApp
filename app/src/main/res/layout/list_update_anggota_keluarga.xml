@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="2dp"
+    android:id="@+id/cardview_update_anggota_keluarga">
+
+    <com.alespero.expandablecardview.ExpandableCardView
+        android:id="@+id/expandable_cardview_update_keluarga_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:inner_view="@layout/update_anggota_keluarga_layout"
+        app:expandOnClick="true"
+        app:animationDuration="300"
+        app:startExpanded="false"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
