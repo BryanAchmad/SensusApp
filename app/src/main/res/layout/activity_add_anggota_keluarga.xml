@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddAnggotaKeluargaActivity"
+    android:background="@color/background">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_add_anggota_keluarga"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/colorPrimaryLight"
+        android:minHeight="?attr/actionBarSize"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/button_back_add_anggota_keluarga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:src="@drawable/ic_arrow_back_black_24dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_toolbar_add_anggota_keluarga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tambah Anggota Keluarga"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            />
+    </androidx.appcompat.widget.Toolbar>
+
+
+
+    <ScrollView
+        android:id="@+id/scrollview_add_anggota_keluarga"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_add_anggota_keluarga"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_add_anggota_keluarga"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:padding="20dp">
+
+
+
+        <!-- nik -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_add_anggota_keluarga_key_nik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NIK"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edittext_add_anggota_keluarga_value_nik"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            app:layout_constraintTop_toBottomOf="@id/textview_add_anggota_keluarga_key_nik"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="4dp"
+            android:hint="123812930174"
+            android:textSize="12sp"
+            android:textCursorDrawable="@null"
+            android:background="@drawable/custom_edittext"/>
+
+        <!-- nama -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_add_anggota_keluarga_key_nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama"
+            android:textSize="12sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edittext_add_anggota_keluarga_value_nik"
+            />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edittext_add_anggota_keluarga_value_nama"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            app:layout_constraintTop_toBottomOf="@id/textview_add_anggota_keluarga_key_nama"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="4dp"
+            android:hint="JohnDoe"
+            android:textSize="12sp"
+            android:textCursorDrawable="@null"
+            android:background="@drawable/custom_edittext"/>
+
+
+        <!-- jenis kelamin -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_add_anggota_keluarga_key_jeniskelamin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jenis Kelamin"
+            android:textSize="12sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edittext_add_anggota_keluarga_value_nama"
+            />
+
+        <RadioGroup
+            android:id="@+id/radiogroup_add_anggota_keluarga_value_jeniskelamin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textview_add_anggota_keluarga_key_jeniskelamin"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="horizontal"
+            >
+
+            <RadioButton
+                android:id="@+id/radiobutton_add_anggota_keluarga_value_jeniskelamin_laki"
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:checked="true"
+                android:text="Laki-laki"
+                android:background="@drawable/custom_edittext"
+                android:buttonTint="@color/colorPrimary"/>
+
+            <RadioButton
+                android:id="@+id/radiobutton_add_anggota_keluarga_value_jeniskelamin_pr"
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="20dp"
+                android:text="Perempuan"
+                android:background="@drawable/custom_edittext"
+                android:buttonTint="@color/colorPrimary"/>
+
+        </RadioGroup>
+
+
+        <!-- tempat lahir -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_add_anggota_keluarga_key_tempatlahir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tempat Lahir"
+            android:textSize="12sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/radiogroup_add_anggota_keluarga_value_jeniskelamin"
+            />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edittext_add_anggota_keluarga_value_tempatlahir"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            app:layout_constraintTop_toBottomOf="@id/textview_add_anggota_keluarga_key_tempatlahir"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="4dp"
+            android:hint="Jakarta"
+            android:textSize="12sp"
+            android:textCursorDrawable="@null"
+            android:background="@drawable/custom_edittext"/>
+
+        <!-- tanggal lahir -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_add_anggota_keluarga_key_tanggallahir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tanggal Lahir"
+            android:textSize="12sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edittext_add_anggota_keluarga_value_tempatlahir"
+            />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edittext_add_anggota_keluarga_value_tanggallahir"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            app:layout_constraintTop_toBottomOf="@id/textview_add_anggota_keluarga_key_tanggallahir"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="4dp"
+            android:hint="dd/mm/yyyy"
+            android:textCursorDrawable="@null"
+            android:textSize="12sp"
+            android:clickable="true"
+            android:editable="false"
+            android:background="@drawable/custom_edittext"/>
+
+
+        <!-- golongan darah -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_add_anggota_keluarga_key_goldar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Golongan Darah"
+            android:textSize="12sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edittext_add_anggota_keluarga_value_tanggallahir"
+            />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edittext_add_anggota_keluarga_value_goldar"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            app:layout_constraintTop_toBottomOf="@id/textview_add_anggota_keluarga_key_goldar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="4dp"
+            android:hint="O"
+            android:textSize="12sp"
+            android:textCursorDrawable="@null"
+            android:background="@drawable/custom_edittext"/>
+
+        <!-- agama -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_add_anggota_keluarga_key_agama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Agama"
+            android:textSize="12sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edittext_add_anggota_keluarga_value_goldar"
+            />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edittext_add_anggota_keluarga_value_agama"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            app:layout_constraintTop_toBottomOf="@id/textview_add_anggota_keluarga_key_agama"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="4dp"
+            android:hint="Agama"
+            android:textSize="12sp"
+            android:textCursorDrawable="@null"
+            android:background="@drawable/custom_edittext"/>
+
+        <!-- status -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_add_anggota_keluarga_key_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status"
+            android:textSize="12sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edittext_add_anggota_keluarga_value_agama"
+            />
+
+        <Spinner
+            android:id="@+id/spinner_add_anggota_keluarga_value_status"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textview_add_anggota_keluarga_key_status"
+            />
+
+        <!-- relasi -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_add_anggota_keluarga_key_relasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Relasi"
+            android:textSize="12sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spinner_add_anggota_keluarga_value_status"
+            />
+
+        <Spinner
+            android:id="@+id/spinner_add_anggota_keluarga_value_relasi"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textview_add_anggota_keluarga_key_relasi"
+            />
+
+        <!-- pendidikan -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_add_anggota_keluarga_key_pendidikan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pendidikan"
+            android:textSize="12sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spinner_add_anggota_keluarga_value_relasi"
+            />
+
+        <Spinner
+            android:id="@+id/spinner_add_anggota_keluarga_value_pendidikan"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textview_add_anggota_keluarga_key_pendidikan"
+            />
+
+        <!-- status pendidikan sekarang -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_add_anggota_keluarga_key_statuspendidikan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status Pendidikan Sekarang"
+            android:textSize="12sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spinner_add_anggota_keluarga_value_pendidikan"
+            />
+
+        <Spinner
+            android:id="@+id/spinner_add_anggota_keluarga_value_statuspendidikan"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textview_add_anggota_keluarga_key_statuspendidikan"
+            />
+
+        <!-- pekerjaan -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_add_anggota_keluarga_key_pekerjaan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pekerjaan"
+            android:textSize="12sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spinner_add_anggota_keluarga_value_statuspendidikan"
+            />
+
+        <Spinner
+            android:id="@+id/spinner_add_anggota_keluarga_value_pekerjaan"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textview_add_anggota_keluarga_key_pekerjaan"
+            />
+
+        <!-- ibu -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_add_anggota_keluarga_key_ibu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ibu"
+            android:textSize="12sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spinner_add_anggota_keluarga_value_pekerjaan"
+            />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edittext_add_anggota_keluarga_value_ibu"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            app:layout_constraintTop_toBottomOf="@id/textview_add_anggota_keluarga_key_ibu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="4dp"
+            android:hint="Emak"
+            android:textCursorDrawable="@null"
+            android:background="@drawable/custom_edittext"/>
+
+        <!-- ayah -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_add_anggota_keluarga_key_ayah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ayah"
+            android:textSize="12sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edittext_add_anggota_keluarga_value_ibu"
+            />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edittext_add_anggota_keluarga_value_ayah"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            app:layout_constraintTop_toBottomOf="@id/textview_add_anggota_keluarga_key_ayah"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="4dp"
+            android:hint="Bapak"
+            android:textCursorDrawable="@null"
+            android:background="@drawable/custom_edittext"/>
+
+
+        <!-- yatim -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_add_anggota_keluarga_key_yatim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yatim"
+            android:textSize="12sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edittext_add_anggota_keluarga_value_ayah"
+            />
+
+        <RadioGroup
+            android:id="@+id/radiogroup_add_anggota_keluarga_value_yatim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textview_add_anggota_keluarga_key_yatim"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="horizontal"
+            >
+
+            <RadioButton
+                android:id="@+id/radiobutton_add_anggota_keluarga_value_yatim_ya"
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:checked="true"
+                android:text="Ya"
+                android:background="@drawable/custom_edittext"
+                android:buttonTint="@color/colorPrimary"/>
+
+            <RadioButton
+                android:id="@+id/radiobutton_add_anggota_keluarga_value_yatim_tidak"
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="20dp"
+                android:text="Tidak"
+                android:background="@drawable/custom_edittext"
+                android:buttonTint="@color/colorPrimary"/>
+
+        </RadioGroup>
+
+        <!-- piatu -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_add_anggota_keluarga_key_piatu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Piatu"
+            android:textSize="12sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/radiogroup_add_anggota_keluarga_value_yatim"
+            />
+
+        <RadioGroup
+            android:id="@+id/radiogroup_add_anggota_keluarga_value_piatu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textview_add_anggota_keluarga_key_piatu"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="horizontal"
+            >
+
+            <RadioButton
+                android:id="@+id/radiobutton_add_anggota_keluarga_value_piatu_ya"
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:checked="true"
+                android:text="Ya"
+                android:background="@drawable/custom_edittext"
+                android:buttonTint="@color/colorPrimary"/>
+
+            <RadioButton
+                android:id="@+id/radiobutton_add_anggota_keluarga_value_piatu_tidak"
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="20dp"
+                android:text="Tidak"
+                android:background="@drawable/custom_edittext"
+                android:buttonTint="@color/colorPrimary"/>
+
+        </RadioGroup>
+
+        <!-- status penerima bantuan -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_add_anggota_keluarga_key_statuspenerimabantuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status Penerima Bantuan"
+            android:textSize="12sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/radiogroup_add_anggota_keluarga_value_piatu"
+            />
+
+        <RadioGroup
+            android:id="@+id/radiogroup_add_anggota_keluarga_value_statuspenerimabantuan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textview_add_anggota_keluarga_key_statuspenerimabantuan"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="horizontal"
+            >
+
+            <RadioButton
+                android:id="@+id/radiobutton_add_anggota_keluarga_value_statuspenerimabantuan_ya"
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:checked="true"
+                android:text="Ya"
+                android:background="@drawable/custom_edittext"
+                android:buttonTint="@color/colorPrimary"/>
+
+            <RadioButton
+                android:id="@+id/radiobutton_add_anggota_keluarga_value_statuspenerimabantuan_tidak"
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="20dp"
+                android:text="Tidak"
+                android:background="@drawable/custom_edittext"
+                android:buttonTint="@color/colorPrimary"/>
+
+        </RadioGroup>
+
+        <!-- disabilitas -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_add_anggota_keluarga_key_disabilitas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Disabilitas"
+            android:textSize="12sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/radiogroup_add_anggota_keluarga_value_statuspenerimabantuan"
+            />
+
+        <Spinner
+            android:id="@+id/spinner_add_anggota_keluarga_value_disabilitas"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textview_add_anggota_keluarga_key_disabilitas"
+            />
+
+        <!-- keanggotaan ormas -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_add_anggota_keluarga_key_ormas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Keanggotaan Ormas"
+            android:textSize="12sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spinner_add_anggota_keluarga_value_disabilitas"
+            />
+
+        <RadioGroup
+            android:id="@+id/radiogroup_add_anggota_keluarga_value_ormas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textview_add_anggota_keluarga_key_ormas"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="horizontal"
+            >
+
+            <RadioButton
+                android:id="@+id/radiobutton_add_anggota_keluarga_value_ormas_ya"
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:checked="true"
+                android:text="Ya"
+                android:background="@drawable/custom_edittext"
+                android:buttonTint="@color/colorPrimary"/>
+
+            <RadioButton
+                android:id="@+id/radiobutton_add_anggota_keluarga_value_ormas_tidak"
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="20dp"
+                android:text="Tidak"
+                android:background="@drawable/custom_edittext"
+                android:buttonTint="@color/colorPrimary"/>
+
+        </RadioGroup>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_add_anggota_keluarga_key_ormas_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Organisasi Masyrakat"
+            android:textSize="12sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/radiogroup_add_anggota_keluarga_value_ormas"
+            />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edittext_add_anggota_keluarga_value_ormas_value"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            app:layout_constraintTop_toBottomOf="@id/textview_add_anggota_keluarga_key_ormas_value"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="4dp"
+            android:hint="Organisasi Masyarakat"
+            android:textCursorDrawable="@null"
+            android:visibility="visible"
+            android:background="@drawable/custom_edittext"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

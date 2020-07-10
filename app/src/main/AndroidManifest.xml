@@ -11,12 +11,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".UpdateDataActivity"></activity>
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".AddAnggotaKeluargaActivity"></activity>
+        <activity android:name=".UpdateDataActivity" />
         <activity android:name=".AddDataActivity" />
         <activity android:name=".DetailActivity" />
-        <activity android:name=".DetailAnggotaKeluargaActivity"/>
+        <activity android:name=".DetailAnggotaKeluargaActivity" />
         <activity android:name=".SearchActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".MainActivity">
